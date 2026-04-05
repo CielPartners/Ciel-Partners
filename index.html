@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partners | 医療・福祉（介護・障がい支援・保育）施設施設・事業所のDX導入＆1on1支援</title>
+    <title>Ciel Partners | 医療・福祉（介護・障がい支援・保育）施設・事業所のDX導入＆1on1支援</title>
     <style>
-        /* 基本設定 */
+        /* 全体の基本設定 */
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #fff; }
         
-        /* ヘッダー：Googleサイト風のシンプル構成 */
-        header { border-bottom: 1px solid #eee; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: #fff; }
+        /* ヘッダーのデザイン */
+        header { border-bottom: 1px solid #eee; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: #fff; position: sticky; top: 0; z-index: 100; }
         .logo { font-size: 1.5rem; font-weight: bold; color: #0056b3; text-decoration: none; }
         nav ul { list-style: none; padding: 0; display: flex; gap: 25px; margin: 0; }
         nav a { text-decoration: none; color: #333; font-weight: bold; font-size: 0.9rem; }
         nav a:hover { color: #0056b3; }
 
-        /* メインビジュアル：TOP画像.jpg を画面幅いっぱいに表示 */
-        .hero-section { width: 100%; background-color: #f9f9f9; text-align: center; }
-        .main-visual { width: 100%; max-width: 1200px; height: auto; display: inline-block; vertical-align: bottom; }
+        /* メインビジュアル：トップ.png を表示 */
+        .hero-section { width: 100%; background-color: #f9f9f9; text-align: center; line-height: 0; }
+        .main-visual { width: 100%; max-width: 1200px; height: auto; display: inline-block; }
 
-        /* コンテンツエリア */
+        /* メインコンテンツ */
         .content-container { max-width: 900px; margin: 0 auto; padding: 60px 20px; text-align: center; }
-        .lead-text { font-size: 1.25rem; font-weight: bold; color: #0056b3; margin-bottom: 20px; line-height: 1.6; }
+        .lead-text { font-size: 1.5rem; font-weight: bold; color: #0056b3; margin-bottom: 25px; line-height: 1.5; }
         .description { font-size: 1.1rem; color: #555; margin-bottom: 40px; }
+        .status-tag { display: inline-block; padding: 5px 15px; background: #eee; border-radius: 20px; font-size: 0.8rem; color: #777; }
 
         /* フッター */
         footer { background: #f8f9fa; padding: 60px 20px; border-top: 1px solid #eee; text-align: center; color: #666; font-size: 0.9rem; }
-        .footer-logo { font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+        .footer-logo { font-weight: bold; color: #333; margin-bottom: 10px; display: block; font-size: 1.1rem; }
 
-        /* スマホ対応 */
+        /* スマホでの表示調整 */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
-            .lead-text { font-size: 1.1rem; }
+            header { flex-direction: column; gap: 15px; }
+            .lead-text { font-size: 1.2rem; }
+            .description { font-size: 1rem; }
         }
     </style>
 </head>
@@ -42,16 +44,16 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="service.html">サービス</a></li>
-            <li><a href="news.html">ニュース</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="#">サービス</a></li>
+            <li><a href="#">ニュース</a></li>
+            <li><a href="#">お問い合わせ</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero-section">
-        <img src="TOP画像.jpg" alt="Ciel Partners メインビジュアル" class="main-visual">
+        <img src="トップ.png" alt="Ciel Partners メインビジュアル" class="main-visual">
     </section>
 
     <section class="content-container">
@@ -62,7 +64,7 @@
             私たちは、現場の皆様が本来のケアに集中できるよう、<br>
             DX導入と業務改善を全力で伴走支援するコンサルティング＆専門家集団です。
         </div>
-        <p>※現在、新サイトへの移行作業中です。詳細な情報は順次更新いたします。</p>
+        <div class="status-tag">※現在、新サイトへの移行作業中です</div>
     </section>
 </main>
 
