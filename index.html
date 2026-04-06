@@ -7,15 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script>
-        // 各コンテンツを別ファイルから読み込む関数
         async function loadPart(id, file) {
             try {
                 const el = document.getElementById(id);
                 const response = await fetch(file);
-                if (response.ok) {
-                    el.innerHTML = await response.text();
-                }
-            } catch (e) { console.error(file + "の読み込みに失敗しました"); }
+                if (response.ok) el.innerHTML = await response.text();
+            } catch (e) { console.error(file + " 読み込みエラー"); }
         }
         window.onload = () => {
             loadPart('load-philosophy', 'philosophy.html');
@@ -27,7 +24,6 @@
     </script>
 </head>
 <body>
-
     <header>
         <nav class="navbar">
             <div class="logo">Ciel Partners</div>
@@ -41,92 +37,58 @@
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-container">
-            <img src="top.png" alt="Main Visual" class="main-img">
-        </div>
-    </section>
+    <section id="hero"><div class="hero-container"><img src="top.png" class="main-img"></div></section>
 
     <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">PHILOSOPHY</h2>
-                <div id="load-philosophy"></div>
+        <section id="about" class="section"><div class="container">
+            <h2 class="section-title">PHILOSOPHY</h2>
+            <div id="load-philosophy"></div>
+        </div></section>
+
+        <section id="news" class="section bg-light"><div class="container">
+            <h2 class="section-title">NEWS & TOPICS</h2>
+            <div id="load-news"></div>
+        </div></section>
+
+        <section id="faq" class="section"><div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div id="load-faq"></div>
+        </div></section>
+
+        <section id="company" class="section bg-light"><div class="container">
+            <h2 class="section-title">PROFILE</h2>
+            <div id="load-profile"></div>
+        </div></section>
+
+        <section id="contact" class="section"><div class="container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <div class="form-group"><label>法人名・施設名<span class="required">必須</span></label><input type="text" name="company" class="form-control" required></div>
+                    <div class="form-group"><label>お名前<span class="required">必須</span></label><input type="text" name="name" class="form-control" required></div>
+                    <div class="form-group"><label>メールアドレス<span class="required">必須</span></label><input type="email" name="email" class="form-control" required></div>
+                    <div class="form-group"><label>お問い合わせ内容<span class="required">必須</span></label><textarea name="message" class="form-control" required></textarea></div>
+                    <div id="load-policy"></div>
+                    <div class="text-center" style="margin-top:20px;">
+                        <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
+                        <div id="status-message"></div>
+                    </div>
+                </form>
             </div>
-        </section>
-
-        <section id="news" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">NEWS & TOPICS</h2>
-                <div id="load-news"></div>
-            </div>
-        </section>
-
-        <section id="faq" class="section">
-            <div class="container">
-                <h2 class="section-title">よくある質問</h2>
-                <div id="load-faq"></div>
-            </div>
-        </section>
-
-        <section id="company" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">PROFILE</h2>
-                <div id="load-profile"></div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">CONTACT</h2>
-                <div class="form-container">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label>法人名・貴施設名<span class="required">必須</span></label>
-                            <input type="text" name="company" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>お名前<span class="required">必須</span></label>
-                            <input type="text" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>メールアドレス<span class="required">必須</span></label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>お問い合わせ内容<span class="required">必須</span></label>
-                            <textarea name="message" class="form-control" required></textarea>
-                        </div>
-
-                        <div id="load-policy"></div>
-
-                        <div class="submit-container text-center">
-                            <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
-                            <div id="status-message"></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+        </div></section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
-        </div>
-    </footer>
+    <footer><div class="container"><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></div></footer>
 
     <script>
         const scriptUrl = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
         document.getElementById('contact-form').addEventListener("submit", function (e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
-            const msg = document.getElementById('status-message');
             btn.disabled = true; btn.innerText = "送信中...";
             fetch(scriptUrl, { method: "POST", body: new FormData(this), mode: "no-cors" })
             .then(() => {
-                msg.style.display = "block";
-                msg.innerText = "送信が完了しました。担当者よりご連絡いたします。";
+                document.getElementById('status-message').innerText = "送信が完了しました。";
                 this.reset(); btn.style.display = "none";
             });
         });
