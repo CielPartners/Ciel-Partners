@@ -1,178 +1,120 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ciel Partners | 医療・福祉DXの専門コンサルティング</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciel Partners | シエル・パートナーズ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        async function loadPart(id, file) {
+            try {
+                const el = document.getElementById(id);
+                const response = await fetch(file);
+                if (response.ok) el.innerHTML = await response.text();
+            } catch (e) { console.error(file + " 読み込みエラー"); }
+        }
+        window.onload = () => {
+            loadPart('load-philosophy', 'philosophy.html');
+            loadPart('load-news', 'news.html');
+            loadPart('load-faq', 'faq.html');
+            loadPart('load-profile', 'profile.html');
+            loadPart('load-policy', 'policy.html');
+        };
+    </script>
 </head>
-
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ciel Partners</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#company">Company</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- ======================
-     ヘッダー
-====================== -->
-<header class="header">
-  <div class="container header-flex">
-    <div class="logo">Ciel Partners</div>
-    <nav class="nav">
-      <a href="#about">企業情報</a>
-      <a href="#service">サービス</a>
-      <a href="#features">特徴</a>
-      <a href="#works">実績</a>
-      <a href="#voice">お客様の声</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
+    <section id="hero"><div class="hero-container"><img src="top.png" class="main-img"></div></section>
 
-<!-- ======================
-     TOP ヒーロー
-====================== -->
-<section class="hero">
-  <div class="hero-inner">
-    <h1>医療・福祉を支えるDXコンサルティング</h1>
-    <p>現場が本当に使える仕組みをつくる</p>
-    <a href="#contact" class="btn">無料相談はこちら</a>
-  </div>
-</section>
+    <main>
+        <section id="about" class="section"><div class="container">
+            <h2 class="section-title">PHILOSOPHY</h2>
+            <div id="load-philosophy"></div>
+        </div></section>
 
-<!-- ======================
-     会社紹介
-====================== -->
-<section id="about" class="section">
-  <div class="container">
-    <h2 class="section-title">Ciel Partnersについて</h2>
-    <p class="center">
-      医療・福祉業界に特化し、DX推進、採用力強化、離職防止、組織開発など<br>
-      「現場が変わるコンサルティング」を提供しています。
-    </p>
-  </div>
-</section>
+        <section id="news" class="section bg-light"><div class="container">
+            <h2 class="section-title">NEWS & TOPICS</h2>
+            <div id="load-news"></div>
+        </div></section>
 
-<!-- ======================
-     サービス
-====================== -->
-<section id="service" class="section bg-light">
-  <div class="container">
-    <h2 class="section-title">サービス</h2>
+        <section id="faq" class="section"><div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div id="load-faq"></div>
+        </div></section>
 
-    <div class="cards-3">
-      <div class="card">
-        <h3>DX導入支援</h3>
-        <p>業務改善・システム導入をワンストップで支援します。</p>
-      </div>
-      <div class="card">
-        <h3>離職防止コンサル</h3>
-        <p>離職率を改善し、定着率の高い組織を作ります。</p>
-      </div>
-      <div class="card">
-        <h3>採用力強化支援</h3>
-        <p>採用戦略・広報・求人改善を総合的にサポート。</p>
-      </div>
-    </div>
+        <section id="company" class="section bg-light"><div class="container">
+            <h2 class="section-title">PROFILE</h2>
+            <div id="load-profile"></div> </div></section>
 
-  </div>
-</section>
+        <section id="contact" class="section"><div class="container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="form-container">
+                <form id="contact-form">
+                    <div class="form-group"><label>法人名・貴施設名<span class="required">必須</span></label><input type="text" name="company" class="form-control" required></div>
+                    <div class="form-group"><label>お名前<span class="required">必須</span></label><input type="text" name="name" class="form-control" required></div>
+                    <div class="form-group"><label>メールアドレス<span class="required">必須</span></label><input type="email" name="email" class="form-control" required></div>
+                    <div class="form-group"><label>住所</label><input type="text" name="address" class="form-control"></div>
+                    <div class="form-group"><label>電話番号</label><input type="tel" name="tel" class="form-control"></div>
+                    
+                    <div class="form-group">
+                        <label>ご相談内容の種別（複数選択可能）<span class="required">必須</span></label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item"><input type="checkbox" name="type" value="医療・福祉業務改善・DXコンサルティング"> 医療・福祉業務改善・DXコンサルティング</label>
+                            <label class="checkbox-item"><input type="checkbox" name="type" value="人事戦略・離職防止支援"> 人事戦略・離職防止支援</label>
+                            <label class="checkbox-item"><input type="checkbox" name="type" value="研修・1on1導入代行"> 研修・1on1導入代行</label>
+                            <label class="checkbox-item"><input type="checkbox" name="type" value="コスト削減・システム診断"> コスト削減・システム診断</label>
+                            <label class="checkbox-item"><input type="checkbox" name="type" value="その他"> その他</label>
+                        </div>
+                    </div>
 
-<!-- ======================
-     特徴（Features）
-====================== -->
-<section id="features" class="section">
-  <div class="container">
-    <h2 class="section-title">私たちの特徴</h2>
+                    <div class="form-group"><label>お問い合わせ内容<span class="required">必須</span></label><textarea name="message" class="form-control" required></textarea></div>
+                    
+                    <div id="load-policy"></div>
 
-    <div class="cards-3">
-      <div class="card">
-        <h3>医療・福祉に特化</h3>
-        <p>業界特有の課題に精通した専門コンサルタント。</p>
-      </div>
-      <div class="card">
-        <h3>現場密着型</h3>
-        <p>机上論ではなく「使えるDX」を実行します。</p>
-      </div>
-      <div class="card">
-        <h3>成果コミット</h3>
-        <p>導入後の定着・改善まで伴走します。</p>
-      </div>
-    </div>
+                    <div class="text-center" style="margin-top:20px;">
+                        <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
+                        <div id="status-message"></div>
+                    </div>
+                </form>
+            </div>
+        </div></section>
+    </main>
 
-  </div>
-</section>
+    <footer><div class="container"><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></div></footer>
 
-<!-- ======================
-     実績（Works）
-====================== -->
-<section id="works" class="section bg-light">
-  <div class="container">
-    <h2 class="section-title">実績</h2>
+    <script>
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
+        document.getElementById('contact-form').addEventListener("submit", function (e) {
+            e.preventDefault();
+            const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked'))
+                .map(cb => cb.value).join(", ");
+            if (!selectedTypes) { alert("ご相談内容の種別を選択してください"); return; }
 
-    <ul class="works-list">
-      <li>医療法人のDX導入支援（150件以上）</li>
-      <li>介護施設の離職率35%改善プロジェクト</li>
-      <li>組織開発・人材定着支援（200件以上）</li>
-    </ul>
-  </div>
-</section>
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true; btn.innerText = "送信中...";
+            
+            const formData = new FormData(this);
+            formData.set("type", selectedTypes);
 
-<!-- ======================
-     お客様の声
-====================== -->
-<section id="voice" class="section">
-  <div class="container">
-    <h2 class="section-title">お客様の声</h2>
-
-    <div class="voice-box">
-      <h3>医療法人 理事長様</h3>
-      <p>「現場の負担が激減し、離職率が大きく改善しました。もっと早く相談すればよかったです。」</p>
-    </div>
-
-    <div class="voice-box">
-      <h3>介護施設 管理者様</h3>
-      <p>「導入後も丁寧に伴走していただき、組織運営が安定しました。」</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======================
-     お知らせ（NEWS）
-====================== -->
-<section id="news" class="section bg-light">
-  <div class="container">
-    <h2 class="section-title">お知らせ</h2>
-
-    <ul class="news-list">
-      <li>2026/04/01　新サービス「離職防止DX」の提供を開始しました</li>
-      <li>2026/03/10　セミナー資料公開のお知らせ</li>
-      <li>2026/02/20　導入事例を追加しました</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ======================
-     お問い合わせ
-====================== -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2 class="section-title">お問い合わせ</h2>
-
-    <form class="contact-form">
-      <label>お名前<input type="text" required></label>
-      <label>メール<input type="email" required></label>
-      <label>内容<textarea required></textarea></label>
-      <button class="btn" type="submit">送信</button>
-    </form>
-  </div>
-</section>
-
-<!-- ======================
-     フッター
-====================== -->
-<footer class="footer">
-  <p>© 2026 Ciel Partners</p>
-  <a href="privacy.html">プライバシーポリシー</a>
-</footer>
-
+            fetch(scriptUrl, { method: "POST", body: formData, mode: "no-cors" })
+            .then(() => {
+                document.getElementById('status-message').innerText = "送信完了しました。";
+                this.reset(); btn.style.display = "none";
+            });
+        });
+    </script>
 </body>
 </html>
