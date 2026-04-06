@@ -1,207 +1,98 @@
-/* --- 基本設定 --- */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciel Partners | シエル・パートナーズ 公式サイト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    color: #333;
-    line-height: 1.8;
-    background-color: #fff;
-    overflow-x: hidden;
-}
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ciel Partners</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#company">Company</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Ciel Partners</h1>
+            <p>ここにメインのキャッチコピーを入力してください</p>
+            <a href="#about" class="btn">詳しく知る</a>
+        </div>
+    </section>
 
-/* --- レイアウト共通 --- */
-.container { 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
-}
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="content-box">
+                    <p style="text-align: center;">Google サイトから移行する「私たちの想い」や「ビジョン」をここに記述します。</p>
+                </div>
+            </div>
+        </section>
 
-.section { 
-    padding: 100px 0; 
-}
+        <section id="services" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>サービス名 01</h3>
+                        <p>サービスの詳細説明をここに入力します。</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>サービス名 02</h3>
+                        <p>サービスの詳細説明をここに入力します。</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>サービス名 03</h3>
+                        <p>サービスの詳細説明をここに入力します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-.section-title { 
-    text-align: center; 
-    font-size: 2.2rem; 
-    margin-bottom: 50px; 
-    position: relative; 
-    padding-bottom: 20px;
-    font-weight: 700;
-}
+        <section id="company" class="section">
+            <div class="container">
+                <h2 class="section-title">Company Profile</h2>
+                <table class="profile-table">
+                    <tr>
+                        <th>会社名 / 団体名</th>
+                        <td>Ciel Partners</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>代表者の名前</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>住所をここに記入</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
-.section-title::after { 
-    content: ""; 
-    position: absolute; 
-    bottom: 0; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 60px; 
-    height: 4px; 
-    background: #007bff; 
-}
+        <section id="contact" class="section bg-light">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Contact</h2>
+                <p>お問い合わせは以下のボタンより承っております。</p>
+                <a href="mailto:info@ciel-p.com" class="btn">メールでお問い合わせ</a>
+            </div>
+        </section>
+    </main>
 
-.bg-light { background-color: #f9fbff; }
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
+        </div>
+    </footer>
 
-/* --- ヘッダー --- */
-header { 
-    height: 80px; 
-    background: rgba(255, 255, 255, 0.98); 
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08); 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-}
-
-.navbar { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    height: 100%; 
-    padding: 0 30px; 
-}
-
-.logo { 
-    font-size: 1.6rem; 
-    font-weight: bold; 
-    color: #007bff; 
-    letter-spacing: 1px;
-}
-
-.nav-links { 
-    display: flex; 
-    align-items: center; 
-    gap: 30px; 
-}
-
-.nav-links a {
-    font-weight: 500;
-    color: #444;
-}
-
-.nav-links a:hover { color: #007bff; }
-
-.nav-btn { 
-    background: #007bff; 
-    color: #fff !important; 
-    padding: 10px 25px; 
-    border-radius: 50px; 
-    box-shadow: 0 4px 10px rgba(0,123,255,0.3);
-}
-
-/* --- ヒーローセクション（トップ.pngを使用） --- */
-#hero {
-    height: 70vh;
-    /* 背景画像を「トップ.png」に設定し、少し暗めのフィルターを重ねて文字を見やすくしています */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('トップ.png') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-}
-
-.hero-content h1 { 
-    font-size: 4rem; 
-    margin-bottom: 20px; 
-    letter-spacing: 2px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.btn { 
-    display: inline-block; 
-    padding: 15px 40px; 
-    background: #007bff; 
-    color: #fff; 
-    border-radius: 50px; 
-    font-weight: bold; 
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.btn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* --- サービスカード --- */
-.services-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 40px; 
-}
-
-.service-card { 
-    background: #fff; 
-    padding: 40px; 
-    border-radius: 15px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    border: 1px solid #eee;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-.service-card h3 { 
-    color: #007bff; 
-    margin-bottom: 15px; 
-    font-size: 1.4rem;
-}
-
-/* --- 会社概要テーブル --- */
-.profile-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.profile-table th, .profile-table td { 
-    padding: 25px; 
-    border-bottom: 1px solid #eee; 
-    text-align: left; 
-}
-
-.profile-table th { 
-    width: 30%; 
-    background: #fdfdfd;
-    color: #666; 
-    font-weight: bold;
-}
-
-/* --- フッター --- */
-footer { 
-    background: #222; 
-    color: #fff; 
-    padding: 50px 0; 
-    text-align: center; 
-}
-
-footer p {
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-/* --- レスポンシブ（スマホ対応） --- */
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* スマホではナビを非表示（後のステップでメニュー化可能） */
-    .hero-content h1 { font-size: 2.5rem; }
-    .section { padding: 60px 0; }
-    .profile-table th { width: 40%; }
-}
+</body>
+</html>
