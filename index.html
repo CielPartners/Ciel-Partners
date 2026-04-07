@@ -3,122 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partners | 福祉コンサルティング・医療DX</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Ciel Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 1. 本家のトーンを再現 */
-        :root { --main-blue: #005CAF; --text-gray: #3c4043; --bg-light: #f8f9fa; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: var(--text-gray); background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        /* ぐちゃぐちゃの原因となる複雑なCSSを全て排除 */
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 4%; border-bottom: 1px solid #eee; }
+        .logo img { height: 50px; width: auto; }
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; }
+        nav a { text-decoration: none; color: #333; font-size: 14px; }
 
-        /* 2. ヘッダー：本家同様、白背景に薄いボーダー */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 4%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo img { height: 55px; width: auto; vertical-align: middle; }
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: var(--text-gray); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
-        nav a:hover { color: var(--main-blue); }
+        /* メイン画像：文字は重ねず、画像だけを正しく表示 */
+        .hero { width: 100%; }
+        .hero img { width: 100%; height: auto; display: block; }
 
-        /* 3. メインバナー：本家の「トップ.png」を全幅表示 */
-        .hero-section { width: 100%; overflow: hidden; background: #fff; }
-        .hero-section img { width: 100%; height: auto; display: block; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 5%; }
+        h2 { text-align: center; color: #005CAF; margin-bottom: 40px; }
 
-        /* 4. メインコンテンツ：本家のゆったりした余白を再現 */
-        .main-container { max-width: 1100px; margin: 0 auto; padding: 100px 5%; }
-        .section-title { text-align: center; color: var(--main-blue); font-size: 2.4rem; margin-bottom: 90px; font-weight: 700; letter-spacing: 0.05em; }
+        /* 事業内容：左に画像、右にテキストの初期レイアウト */
+        .service { display: flex; gap: 30px; margin-bottom: 50px; align-items: flex-start; }
+        .service-img { flex: 1; }
+        .service-img img { width: 100%; border-radius: 4px; }
+        .service-text { flex: 1; }
+        .service-text h3 { color: #005CAF; margin-top: 0; }
 
-        /* 事業内容ブロック：本家の「画像45%：テキスト55%」の比率 */
-        .service-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; }
-        .service-row:nth-child(even) { flex-direction: row-reverse; } /* 交互の配置 */
-        
-        .service-image { flex: 0 0 45%; }
-        .service-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        footer { background: #f4f4f4; text-align: center; padding: 30px; font-size: 12px; }
 
-        .service-content { flex: 1; }
-        .service-content h3 { font-size: 1.9rem; color: var(--main-blue); margin: 0 0 25px 0; font-weight: 700; position: relative; padding-bottom: 15px; }
-        .service-content h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 4px; background: var(--main-blue); }
-        .service-content p { font-size: 1.1rem; color: #555; margin: 0; text-align: justify; }
-
-        /* 5. DX福祉通信：独立したセクション */
-        .news-area { background: var(--bg-light); padding: 100px 5%; border-top: 1px solid #eee; text-align: center; }
-        .news-box { background: #fff; padding: 40px; border: 1px solid #ddd; max-width: 550px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-        .news-box img { width: 100%; height: auto; margin-bottom: 25px; }
-        .news-box h4 { font-size: 1.5rem; color: var(--main-blue); margin: 0 0 15px 0; }
-
-        footer { background: #202124; color: #fff; text-align: center; padding: 60px 20px; font-size: 0.9rem; }
-
-        /* モバイル対応：本家同様に1カラムへ */
         @media (max-width: 768px) {
-            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 30px; margin-bottom: 80px; }
-            .section-title { font-size: 1.8rem; margin-bottom: 50px; }
-            nav { display: none; } /* モバイルメニューは一旦非表示で安定優先 */
+            .service { flex-direction: column; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
-        <nav>
-            <ul>
-                <li><a href="哲学.html">哲学</a></li>
-                <li><a href="プロフィール.html">プロフィール</a></li>
-                <li><a href="ニュース.html">ニュース</a></li>
-                <li><a href="よくある質問.html">Q&A</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
+    <nav>
+        <ul>
+            <li><a href="哲学.html">哲学</a></li>
+            <li><a href="プロフィール.html">プロフィール</a></li>
+            <li><a href="ニュース.html">ニュース</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero-section">
-            <img src="トップ.png" alt="福祉コンサル・医療DXの未来を創る">
-        </section>
+<main>
+    <div class="hero">
+        <img src="トップ.png" alt="Main Visual">
+    </div>
 
-        <div class="main-container">
-            <h2 class="section-title">事業内容</h2>
-
-            <div class="service-row">
-                <div class="service-image">
-                    <img src="1on1画像a.png" alt="DX推進支援">
-                </div>
-                <div class="service-content">
-                    <h3>DX推進支援・業務改善コンサルティング</h3>
-                    <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。現場の負担軽減と質の向上を両立させ、持続可能な運営体制を構築します。</p>
-                </div>
-            </div>
-
-            <div class="service-row">
-                <div class="service-image">
-                    <img src="1on1画像a.png" alt="1on1導入支援">
-                </div>
-                <div class="service-content">
-                    <h3>1on1ミーティング導入・定着支援</h3>
-                    <p>職員一人ひとりと向き合う対話の場を仕組み化します。離職防止や組織の活性化、次世代リーダーの育成に直結する、本質的なコミュニケーション文化を醸成します。</p>
-                </div>
-            </div>
-
-            <div class="service-row">
-                <div class="service-image">
-                    <img src="DX福祉通信.png" alt="研修・セミナー">
-                </div>
-                <div class="service-content">
-                    <h3>各種研修・セミナー・講演</h3>
-                    <p>DX活用、リーダーシップ、チームビルディング、モチベーション向上など、現場の具体的なニーズに応じた実践的な研修プログラムを企画・実施いたします。</p>
-                </div>
+    <div class="container">
+        <h2>事業内容</h2>
+        <div class="service">
+            <div class="service-img"><img src="1on1画像a.png" alt="DX"></div>
+            <div class="service-text">
+                <h3>DX推進支援・業務改善コンサルティング</h3>
+                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。</p>
             </div>
         </div>
-
-        <section class="news-area">
-            <h2 class="section-title" style="margin-bottom: 50px;">DX福祉通信</h2>
-            <div class="news-box">
-                <img src="DX福祉通信.png" alt="DX福祉通信 最新号">
-                <h4>最新号の発行</h4>
-                <p>福祉業界のICT活用事例や、現場改善のヒントを定期的に発信しています。日々の業務に役立つ情報をぜひご覧ください。</p>
+        <div class="service">
+            <div class="service-img"><img src="1on1画像a.png" alt="1on1"></div>
+            <div class="service-text">
+                <h3>1on1ミーティング導入・定着支援</h3>
+                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や組織の活性化を支援します。</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Ciel Partners</p>
+</footer>
 
 </body>
 </html>
