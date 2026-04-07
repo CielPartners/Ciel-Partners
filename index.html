@@ -5,44 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>サイトタイトル | キャッチコピー</title>
-    <meta name="description" content="ここにサイトの説明文を入力してください（120文字程度）。">
-    <link rel="canonical" href="https://example.com/">
+    <title>マイウェブサイト</title>
+    <meta name="description" content="GitHub Pagesのテストサイトです。">
 
     <link rel="stylesheet" href="style.css">
     
-    <link rel="icon" href="favicon.ico">
+    <style>
+        /* ファイルがない場合でも見た目が整うよう、少しだけここにスタイルを書きました */
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        header { background: #f4f4f4; border-bottom: 1px solid #ddd; }
+        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; }
+        footer { margin-top: 50px; font-size: 0.8rem; color: #777; border-top: 1px solid #eee; }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1><a href="/">Logo</a></h1>
+            <h1>My New Site</h1>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section id="hero">
-            <h2>Welcome to Our Website</h2>
-            <p>ここに重要なキャッチフレーズを記載します。</p>
+            <h2>Welcome!</h2>
+            <p>全削除からの再作成、お疲れ様です。これが表示されれば成功です！</p>
         </section>
 
         <section id="about">
-            <h2>私たちについて</h2>
-            <p>サービスや会社の内容を簡潔に説明します。</p>
+            <h3>私たちについて</h3>
+            <p>ここはAboutセクションです。</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 会社名/サイト名. All rights reserved.</p>
+            <p>&copy; 2026 My Website. All rights reserved.</p>
         </div>
     </footer>
 
