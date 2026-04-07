@@ -1,1 +1,109 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | Ciel Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 共通ヘッダー・フッタースタイル */
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; color: #333; background-color: #f8fbfe; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #fff; border-bottom: 1px solid #f0f0f0; }
+        .logo img { height: 60px; }
+        nav ul { list-style: none; display: flex; gap: 35px; margin: 0; }
+        nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.95rem; }
+        
+        /* フォームスタイル (提供テキストを引用 [cite: 1, 2, 5]) */
+        .form-container { max-width: 650px; margin: 80px auto; background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 82, 155, 0.1); border-top: 5px solid #00529b; }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-header h2 { color: #00529b; font-size: 1.5rem; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #00529b; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #d1d9e0; border-radius: 6px; box-sizing: border-box; }
+        .required { background: #ff4d4d; color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 3px; margin-left: 8px; }
+        .checkbox-group { display: grid; gap: 10px; background: #f8fbfe; padding: 15px; border: 1px solid #d1d9e0; border-radius: 6px; }
+        .btn-submit { background: linear-gradient(135deg, #00529b 0%, #00a0e9 100%); color: #fff; border: none; padding: 16px 60px; font-size: 1.1rem; font-weight: bold; border-radius: 50px; cursor: pointer; width: 100%; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px 20px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="Ciel Partnersについて.html">Ciel Partnersについて</a></li>
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="Contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="form-container">
+    <div class="form-header">
+        <h2>無料相談・お問い合わせ</h2>
+        <p>現状の課題やお悩みなど、お気軽にご相談ください。</p>
+    </div>
+    <form id="contact-form">
+        <div class="form-group">
+            <label>法人名・貴施設名<span class="required">必須</span></label>
+            <input type="text" name="company" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>お名前<span class="required">必須</span></label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>メールアドレス<span class="required">必須</span></label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>ご相談内容の種別（複数選択可能）<span class="required">必須</span></label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="type" value="医療・介護DXコンサルティング"> 医療・介護DXコンサルティング</label>
+                <label><input type="checkbox" name="type" value="人事戦略・離職防止支援"> 人事戦略・離職防止支援</label>
+                <label><input type="checkbox" name="type" value="研修・1on1導入代行"> 研修・1on1導入代行</label>
+                <label><input type="checkbox" name="type" value="その他"> その他</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>お問い合わせ内容<span class="required">必須</span></label>
+            <textarea name="message" class="form-control" style="min-height: 150px;" required></textarea>
+        </div>
+        <div class="submit-container" style="text-align: center;">
+            <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
+            <div id="message" style="margin-top:20px; display:none;"></div>
+        </div>
+    </form>
+</div>
+
+<footer><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></footer>
+
+<script>
+    // 提供されたスクリプトをそのまま使用 [cite: 32, 33]
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('message');
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked')).map(cb => cb.value).join(", ");
+        if (!selectedTypes) { alert("種別を選択してください"); return; }
+        btn.disabled = true;
+        btn.innerText = "送信中...";
+        const formData = new FormData(form);
+        formData.set("type", selectedTypes);
+        fetch(scriptUrl, { method: "POST", body: formData, mode: "no-cors" })
+        .then(() => {
+            msg.style.display = "block";
+            msg.innerText = "送信が完了しました。";
+            form.reset();
+            btn.style.display = "none";
+        });
+    });
+</script>
+</body>
+</html>
