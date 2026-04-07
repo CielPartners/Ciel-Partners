@@ -3,118 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partners | シエル・パートナーズ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>シエル・パートナーズ | 経営コンサルティング</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        async function loadPart(id, file) {
-            try {
-                const el = document.getElementById(id);
-                const response = await fetch(file);
-                if (response.ok) el.innerHTML = await response.text();
-            } catch (e) { console.error(file + " 読み込みエラー"); }
-        }
-        window.onload = () => {
-            loadPart('load-philosophy', 'philosophy.html');
-            loadPart('load-news', 'news.html');
-            loadPart('load-faq', 'faq.html');
-            loadPart('load-profile', 'profile.html');
-            loadPart('load-policy', 'policy.html');
-        };
-    </script>
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">Ciel Partners</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#company">Company</a></li>
-                <li><a href="#contact" class="nav-btn">Contact</a></li>
+        <a href="index.html" class="logo">
+            <img src="Ciel-pロゴ透明.png" alt="シエル・パートナーズ">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="哲学.html">哲学</a></li>
+                <li><a href="プロフィール.html">プロフィール</a></li>
+                <li><a href="ニュース.html">ニュース</a></li>
+                <li><a href="ポリシー.html">ポリシー</a></li>
+                <li><a href="よくある質問.html">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero"><div class="hero-container"><img src="top.png" class="main-img"></div></section>
+    <div class="hero">
+        <h1>次世代の福祉と経営をデザインする</h1>
+    </div>
 
-    <main>
-        <section id="about" class="section"><div class="container">
-            <h2 class="section-title">PHILOSOPHY</h2>
-            <div id="load-philosophy"></div>
-        </div></section>
-
-        <section id="news" class="section bg-light"><div class="container">
-            <h2 class="section-title">NEWS & TOPICS</h2>
-            <div id="load-news"></div>
-        </div></section>
-
-        <section id="faq" class="section"><div class="container">
-            <h2 class="section-title">よくある質問</h2>
-            <div id="load-faq"></div>
-        </div></section>
-
-        <section id="company" class="section bg-light"><div class="container">
-            <h2 class="section-title">PROFILE</h2>
-            <div id="load-profile"></div> </div></section>
-
-        <section id="contact" class="section"><div class="container">
-            <h2 class="section-title">CONTACT</h2>
-            <div class="form-container">
-                <form id="contact-form">
-                    <div class="form-group"><label>法人名・貴施設名<span class="required">必須</span></label><input type="text" name="company" class="form-control" required></div>
-                    <div class="form-group"><label>お名前<span class="required">必須</span></label><input type="text" name="name" class="form-control" required></div>
-                    <div class="form-group"><label>メールアドレス<span class="required">必須</span></label><input type="email" name="email" class="form-control" required></div>
-                    <div class="form-group"><label>住所</label><input type="text" name="address" class="form-control"></div>
-                    <div class="form-group"><label>電話番号</label><input type="tel" name="tel" class="form-control"></div>
-                    
-                    <div class="form-group">
-                        <label>ご相談内容の種別（複数選択可能）<span class="required">必須</span></label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item"><input type="checkbox" name="type" value="医療・福祉業務改善・DXコンサルティング"> 医療・福祉業務改善・DXコンサルティング</label>
-                            <label class="checkbox-item"><input type="checkbox" name="type" value="人事戦略・離職防止支援"> 人事戦略・離職防止支援</label>
-                            <label class="checkbox-item"><input type="checkbox" name="type" value="研修・1on1導入代行"> 研修・1on1導入代行</label>
-                            <label class="checkbox-item"><input type="checkbox" name="type" value="コスト削減・システム診断"> コスト削減・システム診断</label>
-                            <label class="checkbox-item"><input type="checkbox" name="type" value="その他"> その他</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group"><label>お問い合わせ内容<span class="required">必須</span></label><textarea name="message" class="form-control" required></textarea></div>
-                    
-                    <div id="load-policy"></div>
-
-                    <div class="text-center" style="margin-top:20px;">
-                        <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
-                        <div id="status-message"></div>
-                    </div>
-                </form>
+    <main class="container">
+        <h2>Solution & Insights</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="DX福祉通信.png" alt="DX福祉通信">
+                <h3>DX福祉通信</h3>
+                <p>最新のテクノロジーを活用した福祉経営のヒントをお届けします。</p>
             </div>
-        </div></section>
+            <div class="card">
+                <img src="1on1画像a.png" alt="コンサルティング">
+                <h3>個別コンサルティング</h3>
+                <p>一人ひとりに寄り添った伴走型の経営支援を提供します。</p>
+            </div>
+        </div>
     </main>
 
-    <footer><div class="container"><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></div></footer>
-
-    <script>
-        const scriptUrl = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
-        document.getElementById('contact-form').addEventListener("submit", function (e) {
-            e.preventDefault();
-            const selectedTypes = Array.from(document.querySelectorAll('input[name="type"]:checked'))
-                .map(cb => cb.value).join(", ");
-            if (!selectedTypes) { alert("ご相談内容の種別を選択してください"); return; }
-
-            const btn = document.getElementById('submit-btn');
-            btn.disabled = true; btn.innerText = "送信中...";
-            
-            const formData = new FormData(this);
-            formData.set("type", selectedTypes);
-
-            fetch(scriptUrl, { method: "POST", body: formData, mode: "no-cors" })
-            .then(() => {
-                document.getElementById('status-message').innerText = "送信完了しました。";
-                this.reset(); btn.style.display = "none";
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; Ciel Partners All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
