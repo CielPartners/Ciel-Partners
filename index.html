@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partners | 福祉業務改善・コンサル・医療DX・離職防止・人手不足対策</title>
+    <title>Ciel Partners | 福祉コンサル・医療DX</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,46 +13,53 @@
         }
         body { font-family: 'Noto Sans JP', sans-serif; margin: 0; color: var(--text-dark); line-height: 1.8; }
 
-        /* ヘッダー */
+        /* ヘッダー：ロゴとメニュー */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 10px 5%; background: #fff; position: sticky; top: 0; z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        .logo img { height: 50px; width: auto; vertical-align: middle; }
-        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; }
+        /* Ciel-pロゴ透明.png を使用 */
+        .logo img { height: 60px; width: auto; vertical-align: middle; }
+        
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; }
+        nav a:hover { color: var(--primary-blue); }
 
-        /* メインバナー：アップロード済みの「トップ.png」を使用 */
+        /* メインバナー：トップ.png を使用 */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('トップ.png');
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('トップ.png');
             background-size: cover; background-position: center;
-            height: 400px; display: flex; align-items: center; justify-content: center;
+            height: 500px; display: flex; align-items: center; justify-content: center;
             color: #fff; text-align: center;
         }
-        .hero h1 { font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.4); margin: 0; }
+        .hero h1 { font-size: 3rem; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.4); margin: 0; }
 
-        /* コンテンツセクション */
-        section { padding: 60px 10%; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: var(--primary-blue); }
+        /* セクション共通 */
+        section { padding: 80px 10%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; color: var(--primary-blue); font-weight: 700; }
 
-        /* 2カラム：1on1画像a.png を使用 */
-        .flex-block { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .flex-text { flex: 1; min-width: 300px; }
-        .flex-img { flex: 1; min-width: 300px; }
-        .flex-img img { width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        /* コンテンツ（2カラム：1on1画像a.png 使用） */
+        .flex-block { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; margin-bottom: 60px; }
+        .flex-text { flex: 1; min-width: 320px; }
+        .flex-text h2 { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .flex-img { flex: 1; min-width: 320px; }
+        .flex-img img { width: 100%; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
-        /* ニュース・通信セクション：DX福祉通信.png を使用 */
-        .news-block { background: var(--bg-light); padding: 60px 10%; text-align: center; }
-        .news-card { background: #fff; padding: 20px; border-radius: 8px; display: inline-block; max-width: 400px; border: 1px solid #eee; }
-        .news-card img { width: 100%; height: auto; margin-bottom: 15px; }
+        /* ニュース・通信（DX福祉通信.png 使用） */
+        .news-section { background-color: var(--bg-light); text-align: center; }
+        .news-card { background: #fff; padding: 30px; border-radius: 8px; border: 1px solid #ddd; max-width: 500px; margin: 0 auto; }
+        .news-card img { width: 100%; height: auto; border-bottom: 1px solid #eee; margin-bottom: 20px; }
 
-        footer { background: #333; color: #fff; padding: 30px; text-align: center; font-size: 0.8rem; }
-        
+        /* フッター */
+        footer { background: #333; color: #fff; padding: 40px; text-align: center; font-size: 0.9rem; }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.6rem; }
-            .flex-block { flex-direction: column-reverse; }
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; padding: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; margin-top: 10px; font-size: 0.8rem; }
+            .flex-block { flex-direction: column-reverse; text-align: center; }
         }
     </style>
 </head>
@@ -75,35 +82,34 @@
 
     <main>
         <div class="hero">
-            <h1>福祉コンサル・医療DX</h1>
+            <h1>福祉コンサル・医療DXの未来を創る</h1>
         </div>
 
         <section id="about">
             <div class="container flex-block">
                 <div class="flex-text">
-                    <h2>医療・福祉の現場に寄り添う</h2>
-                    <p>300施設以上の知見を活かし、IT導入から現場の離職防止対策までトータルでサポートします。</p>
+                    <h2>医療・福祉現場のDX・改善支援</h2>
+                    <p>300施設以上の現場支援実績に基づき、ITの導入から職員の離職防止に向けた1on1ミーティングの定着まで、現場に寄り添ったコンサルティングを提供します。</p>
                 </div>
                 <div class="flex-img">
-                    <img src="1on1画像a.png" alt="1on1支援">
+                    <img src="1on1画像a.png" alt="現場支援イメージ">
                 </div>
             </div>
         </section>
 
-        <div class="news-block">
+        <section class="news-section">
             <div class="container">
-                <h2 class="section-title">最新情報</h2>
+                <h2 class="section-title">DX福祉通信</h2>
                 <div class="news-card">
                     <img src="DX福祉通信.png" alt="DX福祉通信">
-                    <h3>DX福祉通信 発行</h3>
-                    <p>最新の業界動向をお届けしています。</p>
+                    <p>福祉業界の最新動向や、ICT活用のヒントを定期的に発信しています。</p>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>Copyright &copy; Ciel Partners All Rights Reserved.</p>
+        <p>&copy; Ciel Partners All Rights Reserved.</p>
     </footer>
 
 </body>
