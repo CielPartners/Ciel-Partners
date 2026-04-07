@@ -11,7 +11,6 @@
             --text-black: #333333;
             --text-gray: #666666;
             --bg-light: #f9f9f9;
-            --inner-width: 1100px;
         }
 
         body {
@@ -20,33 +19,31 @@
             padding: 0;
             color: var(--text-black);
             background: #fff;
-            line-height: 1.9;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- ヘッダー：本家の高さを再現 --- */
+        /* --- ヘッダー：本家同様の余白と透過感 --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 4%;
-            background: #fff;
+            padding: 20px 5%;
+            background: rgba(255, 255, 255, 0.98);
             border-bottom: 1px solid #f0f0f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .logo img {
-            height: 60px;
+            height: 55px;
             width: auto;
-            display: block;
         }
         nav ul {
             list-style: none;
             display: flex;
             gap: 30px;
             margin: 0;
-            padding: 0;
         }
         nav a {
             text-decoration: none;
@@ -56,11 +53,10 @@
             letter-spacing: 0.05em;
         }
 
-        /* --- メインビナー：余計な文字重ねを廃止 --- */
+        /* --- メインバナー：実体ファイル top.png を全幅表示 --- */
         .hero {
             width: 100%;
-            background: #fff;
-            line-height: 0;
+            overflow: hidden;
         }
         .hero img {
             width: 100%;
@@ -68,11 +64,11 @@
             display: block;
         }
 
-        /* --- メインコンテンツ --- */
+        /* --- コンテンツエリア：本家の「余白の美」 --- */
         .container {
-            max-width: var(--inner-width);
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 120px 5%;
+            padding: 100px 5%;
         }
 
         .section-title {
@@ -95,12 +91,12 @@
             margin: 0 auto;
         }
 
-        /* --- 事業内容（本家のグリッド再現） --- */
+        /* --- 事業内容：本家通りのグリッドレイアウト --- */
         .service-row {
             display: flex;
             align-items: center;
             gap: 80px;
-            margin-bottom: 150px; /* 本家のゆったりした余白 */
+            margin-bottom: 140px;
         }
         .service-row:nth-child(even) {
             flex-direction: row-reverse;
@@ -111,7 +107,7 @@
         .service-img img {
             width: 100%;
             height: auto;
-            border-radius: 2px;
+            border-radius: 4px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
         .service-info {
@@ -120,20 +116,23 @@
         .service-info h3 {
             font-size: 1.8rem;
             color: var(--main-blue);
-            margin: 0 0 30px 0;
+            margin: 0 0 25px 0;
             line-height: 1.4;
             font-weight: 700;
+            border-left: 6px solid var(--main-blue);
+            padding-left: 20px;
         }
         .service-info p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-gray);
             margin: 0;
         }
 
-        /* --- DX福祉通信セクション --- */
+        /* --- ニュースセクション：news.pngを使用 --- */
         .news-section {
             background: var(--bg-light);
             padding: 120px 5%;
+            text-align: center;
         }
         .news-card {
             background: #fff;
@@ -141,77 +140,53 @@
             margin: 0 auto;
             padding: 50px;
             border: 1px solid #e0e0e0;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
         }
         .news-card img {
             width: 100%;
             height: auto;
             margin-bottom: 30px;
         }
-        .news-card h4 {
-            font-size: 1.4rem;
-            color: var(--main-blue);
-            margin-bottom: 20px;
-        }
 
-        /* --- フッター --- */
         footer {
             background: #222;
             color: #fff;
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
             font-size: 0.85rem;
-            letter-spacing: 0.1em;
         }
 
-        /* --- レスポンシブ（スマホ） --- */
-        @media (max-width: 900px) {
-            header { padding: 15px 5%; }
-            .logo img { height: 45px; }
-            nav { display: none; } /* 本家に倣い、スマホは一旦メニュー非表示で安定させる */
-            
-            .service-row, .service-row:nth-child(even) {
-                flex-direction: column;
-                gap: 40px;
-                margin-bottom: 100px;
-            }
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; margin-bottom: 80px; }
             .service-img { flex: 0 0 100%; }
-            .section-title h2 { font-size: 1.8rem; }
-            .container { padding: 80px 5%; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <img src="Ciel-pロゴ透明.png" alt="Ciel Partners">
-    </div>
+    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
     <nav>
         <ul>
-            <li><a href="哲学.html">哲学</a></li>
-            <li><a href="プロフィール.html">プロフィール</a></li>
-            <li><a href="ニュース.html">ニュース</a></li>
-            <li><a href="よくある質問.html">Q&A</a></li>
+            <li><a href="philosophy.html">哲学</a></li>
+            <li><a href="profile.html">プロフィール</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="faq.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero">
-        <img src="トップ.png" alt="メインビジュアル">
+        <img src="top.png" alt="福祉コンサル・医療DXの未来を創る">
     </section>
 
     <div class="container">
-        <div class="section-title">
-            <h2>事業内容</h2>
-        </div>
+        <div class="section-title"><h2>事業内容</h2></div>
 
         <div class="service-row">
-            <div class="service-img">
-                <img src="1on1画像a.png" alt="DX推進支援">
-            </div>
+            <div class="service-img"><img src="1on1画像a.png" alt="DX推進支援"></div>
             <div class="service-info">
                 <h3>DX推進支援・業務改善コンサルティング</h3>
                 <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。現場の負担軽減と質の向上を両立させ、持続可能な運営をサポートします。</p>
@@ -219,41 +194,33 @@
         </div>
 
         <div class="service-row">
-            <div class="service-img">
-                <img src="1on1画像a.png" alt="1on1導入支援">
-            </div>
+            <div class="service-img"><img src="1on1画像a.png" alt="1on1導入支援"></div>
             <div class="service-info">
                 <h3>1on1ミーティング導入・定着支援</h3>
-                <p>職員一人ひとりと向き合う対話の場を仕組み化します。離職防止や組織の活性化、リーダー育成に直結する文化を醸成し、強い組織づくりを支援します。</p>
+                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や組織の活性化を支援。次世代リーダーの育成に直結する文化を醸成します。</p>
             </div>
         </div>
 
         <div class="service-row">
-            <div class="service-img">
-                <img src="DX福祉通信.png" alt="各種研修">
-            </div>
+            <div class="service-img"><img src="福祉DX通信.png" alt="各種研修"></div>
             <div class="service-info">
                 <h3>各種研修・セミナー・講演</h3>
-                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供。気づきと行動変容を促します。</p>
+                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供し、組織の成長を促します。</p>
             </div>
         </div>
     </div>
 
     <section class="news-section">
-        <div class="section-title">
-            <h2>DX福祉通信</h2>
-        </div>
+        <div class="section-title"><h2>DX福祉通信</h2></div>
         <div class="news-card">
-            <img src="DX福祉通信.png" alt="最新号">
+            <img src="news.png" alt="最新号">
             <h4>最新のICT活用事例を発信中</h4>
-            <p>福祉現場での具体的な改善事例や、最新のテクノロジー情報を定期的にお届けしています。</p>
+            <p>福祉現場の最前線から、役立つ情報をお届けしています。</p>
         </div>
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
-</footer>
+<footer><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></footer>
 
 </body>
 </html>
