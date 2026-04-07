@@ -19,11 +19,10 @@
             padding: 0;
             color: var(--text-black);
             background: #fff;
-            line-height: 2.0; /* 本家同様のゆったりした行間 */
+            line-height: 2.0;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- ヘッダー：画像6の配置とフォントを修正 --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -42,7 +41,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 35px; /* 本家のような広いメニュー間隔 */
+            gap: 35px;
             margin: 0;
             padding: 0;
         }
@@ -54,7 +53,6 @@
             letter-spacing: 0.1em;
         }
 
-        /* --- メインビジュアル：画像2のバグを修正 --- */
         .hero {
             width: 100%;
             background: #fff;
@@ -65,11 +63,10 @@
             display: block;
         }
 
-        /* --- コンテンツ：本家の「余白の美」を再現 --- */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 120px 5%; /* 広いマージンを確保 */
+            padding: 120px 5%;
         }
 
         .section-title {
@@ -92,7 +89,6 @@
             margin: 0 auto;
         }
 
-        /* --- 事業内容：交互配置と洗練されたテキスト --- */
         .service-row {
             display: flex;
             align-items: center;
@@ -138,7 +134,6 @@
             text-align: justify;
         }
 
-        /* --- ニュース --- */
         .news-section {
             background: var(--bg-light);
             padding: 120px 5%;
@@ -165,7 +160,6 @@
             font-size: 0.9rem;
         }
 
-        /* スマホ対応 */
         @media (max-width: 900px) {
             .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; }
             nav { display: none; }
@@ -179,10 +173,12 @@
     <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
     <nav>
         <ul>
+            <li><a href="index.html">ホーム</a></li>
             <li><a href="about.html">Ciel Partnersについて</a></li>
-            <li><a href="profile.html">プロフィール</a></li>
+            <li><a href="service.html">サービス</a></li>
             <li><a href="news.html">ニュース</a></li>
-            <li><a href="faq.html">Q&A</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="profile.html">プロフィール</a></li>
         </ul>
     </nav>
 </header>
