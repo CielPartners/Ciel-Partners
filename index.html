@@ -3,124 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サイトタイトル</title>
+    <title>Ciel Partners | 福祉コンサル・医療DX</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* 全体のスタイル設定（Googleサイト風） */
         :root {
-            --primary: #1a73e8;
-            --text: #3c4043;
-            --light-bg: #f8f9fa;
-            --border: #dadce0;
+            --primary-blue: #005CAF;
+            --text-dark: #333333;
+            --bg-light: #f9f9f9;
         }
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            color: var(--text);
-            line-height: 1.6;
-            word-break: break-all;
-        }
-        /* ヘッダー・ロゴ */
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; color: var(--text-dark); line-height: 1.8; }
+
+        /* ヘッダー */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 4%;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; background: #fff; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        .logo { font-size: 1.4rem; font-weight: 700; color: inherit; text-decoration: none; }
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: var(--text); font-size: 0.95rem; }
-        nav a:hover { color: var(--primary); }
+        .logo img { height: 50px; width: auto; vertical-align: middle; }
+        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; }
 
-        /* バナー（ヒーローエリア） */
-        .banner {
-            background: #444b54; /* Googleサイト標準のバナー色 */
-            color: #fff;
-            padding: 80px 5%;
-            text-align: center;
+        /* メインバナー：アップロード済みの「トップ.png」を使用 */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('トップ.png');
+            background-size: cover; background-position: center;
+            height: 400px; display: flex; align-items: center; justify-content: center;
+            color: #fff; text-align: center;
         }
-        .banner h1 { font-size: 2.8rem; margin: 0; font-weight: 400; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.4); margin: 0; }
 
-        /* セクション共通 */
-        section { padding: 60px 8%; }
-        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 40px; }
+        /* コンテンツセクション */
+        section { padding: 60px 10%; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: var(--primary-blue); }
 
-        /* 3カラムレイアウト */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-        }
-        .item { text-align: center; }
-        .item h3 { font-size: 1.4rem; margin-bottom: 15px; }
+        /* 2カラム：1on1画像a.png を使用 */
+        .flex-block { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .flex-text { flex: 1; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-        /* フッター */
-        footer {
-            background: var(--light-bg);
-            padding: 30px;
-            text-align: center;
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
-        }
+        /* ニュース・通信セクション：DX福祉通信.png を使用 */
+        .news-block { background: var(--bg-light); padding: 60px 10%; text-align: center; }
+        .news-card { background: #fff; padding: 20px; border-radius: 8px; display: inline-block; max-width: 400px; border: 1px solid #eee; }
+        .news-card img { width: 100%; height: auto; margin-bottom: 15px; }
 
-        /* レスポンシブ */
-        @media (max-width: 600px) {
-            .banner h1 { font-size: 1.8rem; }
-            nav { display: none; } /* スマホでは簡易化 */
+        footer { background: #333; color: #fff; padding: 30px; text-align: center; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            .flex-block { flex-direction: column-reverse; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="./index.html" class="logo">サイト名</a>
+        <a href="index.html" class="logo">
+            <img src="Ciel-pロゴ透明.png" alt="Ciel Partners">
+        </a>
         <nav>
             <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#content">詳細</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="哲学.html">哲学</a></li>
+                <li><a href="プロフィール.html">プロフィール</a></li>
+                <li><a href="ニュース.html">ニュース</a></li>
+                <li><a href="よくある質問.html">Q&A</a></li>
+                <li><a href="ポリシー.html">ポリシー</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="banner">
-            <h1>メインタイトルをここに入力</h1>
+        <div class="hero">
+            <h1>福祉コンサル・医療DX</h1>
         </div>
 
-        <section id="content">
-            <h2 class="section-title">サービスのご紹介</h2>
-            <div class="grid">
-                <div class="item">
-                    <h3>特徴 1</h3>
-                    <p>Googleサイトの「3つの画像とテキスト」のようなレイアウトです。ここに説明文を入力します。</p>
+        <section id="about">
+            <div class="container flex-block">
+                <div class="flex-text">
+                    <h2>医療・福祉の現場に寄り添う</h2>
+                    <p>300施設以上の知見を活かし、IT導入から現場の離職防止対策までトータルでサポートします。</p>
                 </div>
-                <div class="item">
-                    <h3>特徴 2</h3>
-                    <p>シンプルで清潔感のあるデザインにより、情報を整理して伝えることが可能です。</p>
-                </div>
-                <div class="item">
-                    <h3>特徴 3</h3>
-                    <p>レスポンシブ対応済みですので、スマートフォンでの表示も自動的に最適化されます。</p>
+                <div class="flex-img">
+                    <img src="1on1画像a.png" alt="1on1支援">
                 </div>
             </div>
         </section>
 
-        <section style="background-color: var(--light-bg);">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2>詳しい説明</h2>
-                <p>ここには追加のテキストボックスのように、長めの文章を記載することができます。背景色を変えることでセクションの区切りを明確にしています。</p>
+        <div class="news-block">
+            <div class="container">
+                <h2 class="section-title">最新情報</h2>
+                <div class="news-card">
+                    <img src="DX福祉通信.png" alt="DX福祉通信">
+                    <h3>DX福祉通信 発行</h3>
+                    <p>最新の業界動向をお届けしています。</p>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 サイト名. All rights reserved.</p>
+        <p>Copyright &copy; Ciel Partners All Rights Reserved.</p>
     </footer>
 
 </body>
