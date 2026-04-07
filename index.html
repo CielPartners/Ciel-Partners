@@ -6,42 +6,39 @@
     <title>Ciel Partners | 福祉コンサル・医療DX</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-blue: #005CAF; --text-color: #3c4043; --light-bg: #f8f9fa; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; color: var(--text-color); line-height: 1.8; background: #fff; }
-
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 10px 4%; background: #fff; position: sticky; top: 0; z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
+        :root { --main-blue: #005CAF; --text-color: #3c4043; }
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: var(--text-color); background: #fff; line-height: 1.8; }
+        
+        /* ヘッダー */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 10px 4%; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 50px; width: auto; }
         nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.9rem; }
 
-        /* バナー：グレーの空白を出さない設定 */
-        .hero-banner { width: 100%; background: #fff; }
-        .hero-banner img { width: 100%; height: auto; display: block; }
+        /* バナー：バグ（グレーの箱）を出すCSS背景設定を完全削除 */
+        .hero-banner { width: 100%; margin: 0; padding: 0; background: #fff; }
+        .hero-banner img { width: 100%; height: auto; display: block; margin: 0; border: none; }
 
-        /* メインコンテンツ */
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 5%; }
-        .section-title { text-align: center; color: var(--main-blue); font-size: 2.2rem; margin-bottom: 70px; font-weight: 700; }
+        /* コンテンツエリア */
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 5%; }
+        .section-title { text-align: center; color: var(--main-blue); font-size: 2.2rem; margin-bottom: 60px; font-weight: 700; }
 
-        /* 本家再現：左画像・右テキスト */
-        .service-block { display: flex; align-items: flex-start; gap: 50px; margin-bottom: 100px; }
+        /* 事業内容ブロック */
+        .service-block { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 80px; }
         .service-img { flex: 0 0 45%; }
-        .service-img img { width: 100%; height: auto; border-radius: 2px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .service-img img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .service-text { flex: 1; }
-        .service-text h3 { font-size: 1.8rem; color: var(--main-blue); margin: 0 0 20px 0; font-weight: 700; }
+        .service-text h3 { font-size: 1.7rem; color: var(--main-blue); margin-top: 0; margin-bottom: 20px; border-left: 5px solid var(--main-blue); padding-left: 15px; }
 
-        /* ニュース */
-        .news-section { background-color: var(--light-bg); padding: 80px 5%; text-align: center; }
-        .news-card { background: #fff; padding: 30px; border: 1px solid #ddd; max-width: 500px; margin: 40px auto 0; text-align: left; }
-        .news-card img { width: 100%; height: auto; margin-bottom: 20px; }
+        /* ニュースセクション */
+        .news-section { background: #f8f9fa; padding: 80px 5%; text-align: center; }
+        .news-card { background: #fff; padding: 30px; border: 1px solid #ddd; max-width: 450px; margin: 30px auto 0; text-align: left; }
+        .news-card img { width: 100%; height: auto; margin-bottom: 15px; }
 
-        footer { background: #202124; color: #fff; text-align: center; padding: 40px; font-size: 0.85rem; }
+        footer { background: #202124; color: #fff; text-align: center; padding: 40px; font-size: 0.8rem; }
 
         @media (max-width: 768px) {
-            .service-block { flex-direction: column; gap: 20px; }
+            .service-block { flex-direction: column; }
             .service-img { flex: 0 0 100%; }
             nav { display: none; }
         }
@@ -64,7 +61,7 @@
 
 <main>
     <div class="hero-banner">
-        <img src="トップ.png" alt="Ciel Partners">
+        <img src="トップ.PNG" alt="福祉コンサル・医療DXの未来を創る">
     </div>
 
     <div class="container">
@@ -74,7 +71,7 @@
             <div class="service-img"><img src="1on1画像a.png" alt="DX推進支援"></div>
             <div class="service-text">
                 <h3>DX推進支援・業務改善コンサルティング</h3>
-                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。</p>
+                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。現場の負担軽減と質の向上を両立させます。</p>
             </div>
         </div>
 
@@ -82,7 +79,7 @@
             <div class="service-img"><img src="1on1画像a.png" alt="1on1導入支援"></div>
             <div class="service-text">
                 <h3>1on1ミーティング導入・定着支援</h3>
-                <p>職員一人ひとりと向き合う対話の場を仕組み化します。離職防止や次世代リーダーの育成に直結します。</p>
+                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や次世代リーダーの育成に直結する文化を醸成します。</p>
             </div>
         </div>
 
@@ -90,7 +87,7 @@
             <div class="service-img"><img src="DX福祉通信.png" alt="研修・セミナー"></div>
             <div class="service-text">
                 <h3>各種研修・セミナー・講演</h3>
-                <p>現場の具体的なニーズに応じた実践的な研修プログラムを企画・実施いたします。</p>
+                <p>DX活用、リーダーシップ、コミュニケーションなど、現場の具体的なニーズに応じた実践的なプログラムを提供します。</p>
             </div>
         </div>
     </div>
@@ -99,7 +96,7 @@
         <h2>DX福祉通信</h2>
         <div class="news-card">
             <img src="DX福祉通信.png" alt="DX福祉通信">
-            <p>福祉業界のICT活用事例や、現場改善のヒントを定期的に発信しています。</p>
+            <p>最新のICT活用事例や、現場改善のヒントを定期的にお届けしています。</p>
         </div>
     </section>
 </main>
