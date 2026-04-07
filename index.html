@@ -3,77 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partners</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ciel Partners | 福祉コンサルティング・医療DX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* ぐちゃぐちゃの原因となる複雑なCSSを全て排除 */
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 4%; border-bottom: 1px solid #eee; }
-        .logo img { height: 50px; width: auto; }
-        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; }
-        nav a { text-decoration: none; color: #333; font-size: 14px; }
+        :root {
+            --main-blue: #005CAF;
+            --text-black: #333333;
+            --text-gray: #666666;
+            --bg-light: #f9f9f9;
+            --inner-width: 1100px;
+        }
 
-        /* メイン画像：文字は重ねず、画像だけを正しく表示 */
-        .hero { width: 100%; }
-        .hero img { width: 100%; height: auto; display: block; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-black);
+            background: #fff;
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+        }
 
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 5%; }
-        h2 { text-align: center; color: #005CAF; margin-bottom: 40px; }
+        /* --- ヘッダー：本家の高さを再現 --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            background: #fff;
+            border-bottom: 1px solid #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-black);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+        }
 
-        /* 事業内容：左に画像、右にテキストの初期レイアウト */
-        .service { display: flex; gap: 30px; margin-bottom: 50px; align-items: flex-start; }
-        .service-img { flex: 1; }
-        .service-img img { width: 100%; border-radius: 4px; }
-        .service-text { flex: 1; }
-        .service-text h3 { color: #005CAF; margin-top: 0; }
+        /* --- メインビナー：余計な文字重ねを廃止 --- */
+        .hero {
+            width: 100%;
+            background: #fff;
+            line-height: 0;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-        footer { background: #f4f4f4; text-align: center; padding: 30px; font-size: 12px; }
+        /* --- メインコンテンツ --- */
+        .container {
+            max-width: var(--inner-width);
+            margin: 0 auto;
+            padding: 120px 5%;
+        }
 
-        @media (max-width: 768px) {
-            .service { flex-direction: column; }
-            nav { display: none; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--main-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--main-blue);
+            margin: 0 auto;
+        }
+
+        /* --- 事業内容（本家のグリッド再現） --- */
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 150px; /* 本家のゆったりした余白 */
+        }
+        .service-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .service-img {
+            flex: 0 0 50%;
+        }
+        .service-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .service-info {
+            flex: 1;
+        }
+        .service-info h3 {
+            font-size: 1.8rem;
+            color: var(--main-blue);
+            margin: 0 0 30px 0;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+        .service-info p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        /* --- DX福祉通信セクション --- */
+        .news-section {
+            background: var(--bg-light);
+            padding: 120px 5%;
+        }
+        .news-card {
+            background: #fff;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+        .news-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        .news-card h4 {
+            font-size: 1.4rem;
+            color: var(--main-blue);
+            margin-bottom: 20px;
+        }
+
+        /* --- フッター --- */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- レスポンシブ（スマホ） --- */
+        @media (max-width: 900px) {
+            header { padding: 15px 5%; }
+            .logo img { height: 45px; }
+            nav { display: none; } /* 本家に倣い、スマホは一旦メニュー非表示で安定させる */
+            
+            .service-row, .service-row:nth-child(even) {
+                flex-direction: column;
+                gap: 40px;
+                margin-bottom: 100px;
+            }
+            .service-img { flex: 0 0 100%; }
+            .section-title h2 { font-size: 1.8rem; }
+            .container { padding: 80px 5%; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
+    <div class="logo">
+        <img src="Ciel-pロゴ透明.png" alt="Ciel Partners">
+    </div>
     <nav>
         <ul>
             <li><a href="哲学.html">哲学</a></li>
             <li><a href="プロフィール.html">プロフィール</a></li>
             <li><a href="ニュース.html">ニュース</a></li>
+            <li><a href="よくある質問.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <div class="hero">
-        <img src="トップ.png" alt="Main Visual">
-    </div>
+    <section class="hero">
+        <img src="トップ.png" alt="メインビジュアル">
+    </section>
 
     <div class="container">
-        <h2>事業内容</h2>
-        <div class="service">
-            <div class="service-img"><img src="1on1画像a.png" alt="DX"></div>
-            <div class="service-text">
+        <div class="section-title">
+            <h2>事業内容</h2>
+        </div>
+
+        <div class="service-row">
+            <div class="service-img">
+                <img src="1on1画像a.png" alt="DX推進支援">
+            </div>
+            <div class="service-info">
                 <h3>DX推進支援・業務改善コンサルティング</h3>
-                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。</p>
+                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。現場の負担軽減と質の向上を両立させ、持続可能な運営をサポートします。</p>
             </div>
         </div>
-        <div class="service">
-            <div class="service-img"><img src="1on1画像a.png" alt="1on1"></div>
-            <div class="service-text">
+
+        <div class="service-row">
+            <div class="service-img">
+                <img src="1on1画像a.png" alt="1on1導入支援">
+            </div>
+            <div class="service-info">
                 <h3>1on1ミーティング導入・定着支援</h3>
-                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や組織の活性化を支援します。</p>
+                <p>職員一人ひとりと向き合う対話の場を仕組み化します。離職防止や組織の活性化、リーダー育成に直結する文化を醸成し、強い組織づくりを支援します。</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-img">
+                <img src="DX福祉通信.png" alt="各種研修">
+            </div>
+            <div class="service-info">
+                <h3>各種研修・セミナー・講演</h3>
+                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供。気づきと行動変容を促します。</p>
             </div>
         </div>
     </div>
+
+    <section class="news-section">
+        <div class="section-title">
+            <h2>DX福祉通信</h2>
+        </div>
+        <div class="news-card">
+            <img src="DX福祉通信.png" alt="最新号">
+            <h4>最新のICT活用事例を発信中</h4>
+            <p>福祉現場での具体的な改善事例や、最新のテクノロジー情報を定期的にお届けしています。</p>
+        </div>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 Ciel Partners</p>
+    <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
 </footer>
 
 </body>
