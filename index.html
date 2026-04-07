@@ -19,61 +19,64 @@
             padding: 0;
             color: var(--text-black);
             background: #fff;
-            line-height: 1.8;
+            line-height: 1.8; /* 本家のようなゆったりした行間 */
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- ヘッダー：本家同様の余白と透過感 --- */
+        /* --- ヘッダー（画像5の配置・フォントを修正） --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.98);
+            background: #fff;
             border-bottom: 1px solid #f0f0f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .logo img {
-            height: 55px;
+            height: 55px; /* 本家のロゴサイズ */
             width: auto;
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 25px; /* メニュー間の余白を確保 */
             margin: 0;
+            padding: 0;
         }
         nav a {
             text-decoration: none;
             color: var(--text-black);
             font-weight: 500;
             font-size: 0.95rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.05em; /* 文字間隔を調整 */
         }
 
-        /* --- メインバナー：実体ファイル top.png を全幅表示 --- */
+        /* --- メインビジュアル（画像2・3のリンク切れ修正） --- */
         .hero {
             width: 100%;
             overflow: hidden;
+            background: #fff;
         }
         .hero img {
             width: 100%;
             height: auto;
             display: block;
+            border: none;
         }
 
-        /* --- コンテンツエリア：本家の「余白の美」 --- */
+        /* --- コンテンツエリア（画像4の詰まりを修正） --- */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 5%;
+            padding: 100px 5%; /* 各セクションの間に広大な余白を確保 */
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
         .section-title h2 {
             font-size: 2.2rem;
@@ -91,24 +94,24 @@
             margin: 0 auto;
         }
 
-        /* --- 事業内容：本家通りのグリッドレイアウト --- */
+        /* --- 事業内容（本家のレイアウト再現） --- */
         .service-row {
             display: flex;
             align-items: center;
-            gap: 80px;
-            margin-bottom: 140px;
+            gap: 60px;
+            margin-bottom: 120px; /* 本家のような大きな余白 */
         }
         .service-row:nth-child(even) {
             flex-direction: row-reverse;
         }
         .service-img {
-            flex: 0 0 50%;
+            flex: 0 0 45%;
         }
         .service-img img {
             width: 100%;
             height: auto;
             border-radius: 4px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* 本家のような柔らかい影 */
         }
         .service-info {
             flex: 1;
@@ -119,47 +122,65 @@
             margin: 0 0 25px 0;
             line-height: 1.4;
             font-weight: 700;
-            border-left: 6px solid var(--main-blue);
-            padding-left: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .service-info h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--main-blue);
         }
         .service-info p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-gray);
             margin: 0;
+            text-align: justify;
         }
 
-        /* --- ニュースセクション：news.pngを使用 --- */
+        /* --- ニュースセクション --- */
         .news-section {
             background: var(--bg-light);
-            padding: 120px 5%;
+            padding: 100px 5%;
             text-align: center;
         }
         .news-card {
             background: #fff;
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
-            padding: 50px;
-            border: 1px solid #e0e0e0;
+            padding: 40px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
         .news-card img {
             width: 100%;
             height: auto;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+        .news-card h4 {
+            font-size: 1.5rem;
+            color: var(--main-blue);
+            margin-bottom: 20px;
         }
 
         footer {
-            background: #222;
+            background: #202124;
             color: #fff;
             text-align: center;
             padding: 60px 20px;
             font-size: 0.85rem;
+            letter-spacing: 0.1em;
         }
 
-        /* スマホ対応 */
         @media (max-width: 768px) {
-            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; margin-bottom: 80px; }
+            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 30px; margin-bottom: 80px; }
             .service-img { flex: 0 0 100%; }
             nav { display: none; }
+            header { padding: 15px 5%; }
+            .logo img { height: 40px; }
         }
     </style>
 </head>
@@ -169,17 +190,17 @@
     <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
     <nav>
         <ul>
-            <li><a href="philosophy.html">哲学</a></li>
-            <li><a href="profile.html">プロフィール</a></li>
-            <li><a href="news.html">ニュース</a></li>
-            <li><a href="faq.html">Q&A</a></li>
+            <li><a href="哲学.html">哲学</a></li>
+            <li><a href="プロフィール.html">プロフィール</a></li>
+            <li><a href="ニュース.html">ニュース</a></li>
+            <li><a href="よくある質問.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero">
-        <img src="top.png" alt="福祉コンサル・医療DXの未来を創る">
+        <img src="トップ.png" alt="福祉コンサル・医療DXの未来を創る">
     </section>
 
     <div class="container">
@@ -202,10 +223,10 @@
         </div>
 
         <div class="service-row">
-            <div class="service-img"><img src="福祉DX通信.png" alt="各種研修"></div>
+            <div class="service-img"><img src="DX福祉通信.png" alt="各種研修"></div>
             <div class="service-info">
                 <h3>各種研修・セミナー・講演</h3>
-                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供し、組織の成長を促します。</p>
+                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供し、職員の気づきと行動変容を促します。</p>
             </div>
         </div>
     </div>
@@ -213,9 +234,9 @@
     <section class="news-section">
         <div class="section-title"><h2>DX福祉通信</h2></div>
         <div class="news-card">
-            <img src="news.png" alt="最新号">
+            <img src="DX福祉通信.png" alt="最新号">
             <h4>最新のICT活用事例を発信中</h4>
-            <p>福祉現場の最前線から、役立つ情報をお届けしています。</p>
+            <p>福祉現場の最前線から、ケアの質向上に役立つ情報を定期的にお届けしています。</p>
         </div>
     </section>
 </main>
