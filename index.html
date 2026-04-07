@@ -6,181 +6,44 @@
     <title>Ciel Partners | 福祉コンサルティング・医療DX</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --main-blue: #005CAF;
-            --text-black: #333333;
-            --text-gray: #666666;
-            --bg-light: #f9f9f9;
-        }
+        :root { --main-blue: #005CAF; --text-black: #333; --text-gray: #666; }
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: var(--text-black); background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
 
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-black);
-            background: #fff;
-            line-height: 1.8; /* 本家のようなゆったりした行間 */
-            -webkit-font-smoothing: antialiased;
-        }
+        /* ヘッダー：画像5の通り、余白を広げフォントを調整 */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1000; background: #fff; }
+        .logo img { height: 50px; width: auto; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text-black); font-weight: 500; font-size: 0.95rem; }
 
-        /* --- ヘッダー（画像5の配置・フォントを修正） --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: #fff;
-            border-bottom: 1px solid #f0f0f0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo img {
-            height: 55px; /* 本家のロゴサイズ */
-            width: auto;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px; /* メニュー間の余白を確保 */
-            margin: 0;
-            padding: 0;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--text-black);
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em; /* 文字間隔を調整 */
-        }
+        /* ヒーロー：画像2・3のバグを修正。GitHub上の「top.png」を確実に指定 */
+        .hero { width: 100%; line-height: 0; }
+        .hero img { width: 100%; height: auto; display: block; }
 
-        /* --- メインビジュアル（画像2・3のリンク切れ修正） --- */
-        .hero {
-            width: 100%;
-            overflow: hidden;
-            background: #fff;
-        }
-        .hero img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: none;
-        }
+        /* メインコンテンツ：画像4の詰まりを解消する広い余白 */
+        .container { max-width: 1050px; margin: 0 auto; padding: 100px 5%; }
+        .section-title { text-align: center; margin-bottom: 90px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--main-blue); font-weight: 700; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-title h2::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--main-blue); }
 
-        /* --- コンテンツエリア（画像4の詰まりを修正） --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 100px 5%; /* 各セクションの間に広大な余白を確保 */
-        }
+        /* 事業内容：画像とテキストを分離し、絶対に重ならない構造へ */
+        .service-row { display: flex; align-items: center; gap: 70px; margin-bottom: 120px; }
+        .service-row:nth-child(even) { flex-direction: row-reverse; }
+        .service-img { flex: 0 0 48%; }
+        .service-img img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .service-info { flex: 1; }
+        .service-info h3 { font-size: 1.8rem; color: var(--main-blue); margin-bottom: 25px; border-left: 6px solid var(--main-blue); padding-left: 20px; }
+        .service-info p { font-size: 1.05rem; color: var(--text-gray); margin: 0; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--main-blue);
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 0.1em;
-        }
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: var(--main-blue);
-            margin: 0 auto;
-        }
+        /* ニュース：news.pngを使用 */
+        .news-section { background: #f9f9f9; padding: 100px 5%; text-align: center; }
+        .news-card { background: #fff; max-width: 600px; margin: 0 auto; padding: 50px; border: 1px solid #eee; }
+        .news-card img { width: 100%; height: auto; margin-bottom: 30px; }
 
-        /* --- 事業内容（本家のレイアウト再現） --- */
-        .service-row {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 120px; /* 本家のような大きな余白 */
-        }
-        .service-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        .service-img {
-            flex: 0 0 45%;
-        }
-        .service-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06); /* 本家のような柔らかい影 */
-        }
-        .service-info {
-            flex: 1;
-        }
-        .service-info h3 {
-            font-size: 1.8rem;
-            color: var(--main-blue);
-            margin: 0 0 25px 0;
-            line-height: 1.4;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .service-info h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--main-blue);
-        }
-        .service-info p {
-            font-size: 1.05rem;
-            color: var(--text-gray);
-            margin: 0;
-            text-align: justify;
-        }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 60px 20px; font-size: 0.85rem; }
 
-        /* --- ニュースセクション --- */
-        .news-section {
-            background: var(--bg-light);
-            padding: 100px 5%;
-            text-align: center;
-        }
-        .news-card {
-            background: #fff;
-            max-width: 550px;
-            margin: 0 auto;
-            padding: 40px;
-            border: 1px solid #eee;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-        .news-card img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 25px;
-        }
-        .news-card h4 {
-            font-size: 1.5rem;
-            color: var(--main-blue);
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: #202124;
-            color: #fff;
-            text-align: center;
-            padding: 60px 20px;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-        }
-
-        @media (max-width: 768px) {
-            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 30px; margin-bottom: 80px; }
-            .service-img { flex: 0 0 100%; }
+        @media (max-width: 850px) {
+            .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; }
             nav { display: none; }
-            header { padding: 15px 5%; }
-            .logo img { height: 40px; }
         }
     </style>
 </head>
@@ -190,43 +53,35 @@
     <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
     <nav>
         <ul>
-            <li><a href="哲学.html">哲学</a></li>
-            <li><a href="プロフィール.html">プロフィール</a></li>
-            <li><a href="ニュース.html">ニュース</a></li>
-            <li><a href="よくある質問.html">Q&A</a></li>
+            <li><a href="philosophy.html">哲学</a></li>
+            <li><a href="profile.html">プロフィール</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="faq.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="hero">
-        <img src="トップ.png" alt="福祉コンサル・医療DXの未来を創る">
+        <img src="top.png" alt="Main Visual">
     </section>
 
     <div class="container">
         <div class="section-title"><h2>事業内容</h2></div>
 
         <div class="service-row">
-            <div class="service-img"><img src="1on1画像a.png" alt="DX推進支援"></div>
+            <div class="service-img"><img src="1on1画像a.png" alt="DX"></div>
             <div class="service-info">
                 <h3>DX推進支援・業務改善コンサルティング</h3>
-                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。現場の負担軽減と質の向上を両立させ、持続可能な運営をサポートします。</p>
+                <p>介護・医療現場の課題に合わせ、ICTツールの選定から導入、運用定着までを伴走支援します。</p>
             </div>
         </div>
 
         <div class="service-row">
-            <div class="service-img"><img src="1on1画像a.png" alt="1on1導入支援"></div>
+            <div class="service-img"><img src="1on1画像a.png" alt="1on1"></div>
             <div class="service-info">
                 <h3>1on1ミーティング導入・定着支援</h3>
-                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や組織の活性化を支援。次世代リーダーの育成に直結する文化を醸成します。</p>
-            </div>
-        </div>
-
-        <div class="service-row">
-            <div class="service-img"><img src="DX福祉通信.png" alt="各種研修"></div>
-            <div class="service-info">
-                <h3>各種研修・セミナー・講演</h3>
-                <p>DX活用、リーダーシップ、チームビルディングなど、現場の具体的なニーズに応じた実践的なプログラムを提供し、職員の気づきと行動変容を促します。</p>
+                <p>職員一人ひとりと向き合う対話の場を仕組み化し、離職防止や組織の活性化を支援します。</p>
             </div>
         </div>
     </div>
@@ -234,9 +89,8 @@
     <section class="news-section">
         <div class="section-title"><h2>DX福祉通信</h2></div>
         <div class="news-card">
-            <img src="DX福祉通信.png" alt="最新号">
+            <img src="news.png" alt="Latest News">
             <h4>最新のICT活用事例を発信中</h4>
-            <p>福祉現場の最前線から、ケアの質向上に役立つ情報を定期的にお届けしています。</p>
         </div>
     </section>
 </main>
