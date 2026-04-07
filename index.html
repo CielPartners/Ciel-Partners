@@ -6,23 +6,20 @@
     <title>Ciel Partners | 福祉業務改善・DXコンサルティング・医療業務改善・DXコンサルティング・人手不足・離職防止・1on1導入支援・実施代行</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-blue: #005CAF; --text-black: #333333; --text-gray: #666666; --bg-light: #f9f9f9; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; color: var(--text-black); line-height: 2.0; -webkit-font-smoothing: antialiased; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; background: #fff; border-bottom: 1px solid #f0f0f0; position: sticky; top: 0; z-index: 1000; }
-        .logo img { height: 60px; width: auto; }
-        nav ul { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: var(--text-black); font-weight: 500; font-size: 0.95rem; letter-spacing: 0.1em; }
-        .hero img { width: 100%; height: auto; display: block; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 120px 5%; }
-        .section-title { text-align: center; margin-bottom: 100px; }
-        .section-title h2 { font-size: 2.2rem; color: var(--main-blue); font-weight: 700; margin-bottom: 25px; letter-spacing: 0.1em; line-height: 1.5; }
-        .service-row { display: flex; align-items: center; gap: 80px; margin-bottom: 160px; }
-        .service-row:nth-child(even) { flex-direction: row-reverse; }
-        .service-img img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
-        .service-info h3 { font-size: 1.8rem; color: var(--main-blue); margin: 0 0 35px 0; font-weight: 700; line-height: 1.4; }
-        .btn-detail { display: inline-block; padding: 10px 25px; background-color: var(--main-blue); color: #fff !important; text-decoration: none; border-radius: 4px; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 80px 20px; }
-        @media (max-width: 900px) { .service-row, .service-row:nth-child(even) { flex-direction: column; gap: 40px; } nav { display: none; } }
+        :root { --main-blue: #005CAF; --text-black: #333333; }
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 2.0; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; border-bottom: 1px solid #f0f0f0; sticky; top: 0; background: #fff; z-index: 1000; }
+        .logo img { height: 60px; }
+        nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: var(--text-black); font-weight: 500; font-size: 0.9rem; }
+        .hero img { width: 100%; height: auto; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 100px 5%; }
+        .section-title { text-align: center; margin-bottom: 80px; }
+        .section-title h2 { font-size: 2rem; color: var(--main-blue); line-height: 1.5; }
+        .service-row { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; }
+        .service-img img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .btn-detail { display: inline-block; padding: 12px 30px; background: var(--main-blue); color: #fff !important; text-decoration: none; border-radius: 4px; margin-top: 20px; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 60px 20px; }
     </style>
 </head>
 <body>
@@ -33,37 +30,32 @@
         <ul>
             <li><a href="index.html">home</a></li>
             <li><a href="Ciel Partnersについて.html">Ciel Partnersについて</a></li>
-            <li><a href="service.html">サービス</a></li>
+            <li><a href="service">サービス</a></li>
             <li><a href="news.html">ニュース</a></li>
             <li><a href="faq.html">よくある質問</a></li>
-            <li><a href="Contact.html">お問い合わせ</a></li>
-            <li><a href="Privacy policy.html">プライバシーポリシー</a></li>
+            <li><a href="Contact">お問い合わせ</a></li>
+            <li><a href="Privacy policy">プライバシーポリシー</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <section class="hero">
-        <img src="top.png" alt="Ciel Partners | 福祉業務改善・DXコンサルティング・医療業務改善・DXコンサルティング・人手不足・離職防止・1on1導入支援・実施代行">
-    </section>
-
+    <section class="hero"><img src="top.png" alt="メイン画像"></section>
     <div class="container">
         <div class="section-title">
             <h2>福祉業務改善・DXコンサルティング<br>医療業務改善・DXコンサルティング</h2>
         </div>
-
         <div class="service-row">
-            <div class="service-img"><img src="1on1画像a.png" alt="伴走支援"></div>
+            <div class="service-img"><img src="1on1画像a.png" alt="1on1導入"></div>
             <div class="service-info">
                 <h3>人手不足・離職防止<br>1on1導入支援・実施代行</h3>
-                <p>現場の課題に深く寄り添い、IT活用と対話の力で、持続可能な組織づくりをサポートします。</p>
-                <a href="service.html" class="btn-detail">サービス詳細を見る</a>
+                <p>現場の課題に寄り添い、持続可能な組織づくりをサポートします。</p>
+                <a href="service" class="btn-detail">サービス詳細を見る</a>
             </div>
         </div>
     </div>
 </main>
 
 <footer><p>&copy; 2026 Ciel Partners All Rights Reserved.</p></footer>
-
 </body>
 </html>
