@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <title>お問い合わせ | Ciel Partners</title>
     <style>
+        :root { --main-blue: #005CAF; }
         body { font-family: sans-serif; margin: 0; line-height: 1.8; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; }
         .logo img { height: 50px; }
         nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
         nav a { text-decoration: none; color: #333; font-size: 0.85rem; }
-        .container { max-width: 700px; margin: 60px auto; padding: 0 5%; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; }
+        .container { max-width: 700px; margin: 60px auto; padding: 40px; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--main-blue); }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
+        button { background: var(--main-blue); color: #fff; padding: 15px 50px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1.1rem; display: block; margin: 40px auto 0; transition: 0.3s; }
+        button:hover { background: #004488; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -29,8 +35,15 @@
     </nav>
 </header>
 <main class="container">
-    <h2>CONTACT</h2>
-    <p>フォーム準備中（またはメールアドレスを記載）</p>
+    <h2 style="text-align:center; color:var(--main-blue); margin-bottom:30px;">CONTACT</h2>
+    <p style="text-align:center; margin-bottom:40px;">ご相談・お問い合わせは、以下のフォームよりお願いいたします。</p>
+    <form>
+        <div class="form-group"><label>貴社名・事業所名</label><input type="text" placeholder="株式会社〇〇"></div>
+        <div class="form-group"><label>お名前（必須）</label><input type="text" required></div>
+        <div class="form-group"><label>メールアドレス（必須）</label><input type="email" required></div>
+        <div class="form-group"><label>お問い合わせ内容（必須）</label><textarea rows="8" required></textarea></div>
+        <button type="submit">送信内容を確認する</button>
+    </form>
 </main>
 <footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
 </body>
