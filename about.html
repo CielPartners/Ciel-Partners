@@ -2,43 +2,75 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Ciel Partnersについて</title>
+    <title>ABOUT | Ciel Partners</title>
     <style>
-        :root { --main-blue: #005CAF; }
         body { font-family: sans-serif; margin: 0; line-height: 1.8; color: #333; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 1px solid #eee; }
-        .logo img { height: 50px; }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #333; font-size: 0.9rem; }
+        header { padding: 15px 5%; border-bottom: 1px solid #eee; }
         .container { max-width: 900px; margin: 60px auto; padding: 0 5%; }
-        .message { background: #f9f9f9; padding: 40px; border-radius: 15px; border-left: 6px solid var(--main-blue); margin-bottom: 60px; }
-        .profile-table { width: 100%; border-collapse: collapse; }
-        .profile-table th, .profile-table td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
-        .profile-table th { width: 25%; background: #fcfcfc; color: var(--main-blue); }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; }
+        
+        /* 画像のデザイン再現 */
+        .philosophy-header { text-align: center; margin-bottom: 50px; }
+        .philosophy-header h2 { color: #005CAF; font-size: 2.2rem; margin-bottom: 0; border: none; letter-spacing: 2px; }
+        .philosophy-header .line { width: 40px; height: 3px; background: #005CAF; margin: 15px auto 30px; }
+        .main-copy { font-size: 1.6rem; font-weight: bold; line-height: 1.6; color: #333; }
+
+        h2 { color: #005CAF; border-bottom: 2px solid #005CAF; padding-bottom: 10px; margin-top: 70px; font-size: 1.6rem; }
+        .ph-box { background: #f8fbff; padding: 40px; border-radius: 12px; margin: 30px 0; border: 1px solid #e1e9f5; }
+        .ph-item { margin-bottom: 35px; }
+        .ph-label { font-weight: bold; color: #005CAF; font-size: 1.3rem; display: block; border-left: 5px solid #005CAF; padding-left: 15px; }
+        .ph-en { font-size: 0.85rem; color: #888; display: block; margin-left: 20px; margin-bottom: 10px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        th, td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
+        th { color: #005CAF; width: 30%; background: #fafafa; font-weight: bold; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
     </style>
 </head>
 <body>
-<header>
-    <div class="logo"><img src="Ciel-pロゴ透明.png"></div>
-    <nav><ul><li><a href="index.html">home</a></li><li><a href="about.html">Ciel Partnersについて</a></li><li><a href="service.html">サービス</a></li><li><a href="news.html">ニュース</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="contact.html">お問い合わせ</a></li><li><a href="policy.html">ポリシー</a></li></ul></nav>
-</header>
+<header><img src="Ciel-pロゴ透明.png" height="50"></header>
 <main class="container">
-    <h2 style="color:var(--main-blue); text-align:center;">代表メッセージ</h2>
-    <div class="message">
-        <p>医療・福祉の現場が、本来の専門業務に集中し、笑顔で働ける環境を創ることが私たちの使命です。</p>
-        <p>現場の皆様の声を大切にしながら、デジタル化による効率化と、1on1を通じた対話の文化を根付かせ、「選ばれる事業所」への変革をサポートします。</p>
-        <p style="text-align: right; font-weight: bold;">代表者　伊藤 和典</p>
+    <div class="philosophy-header">
+        <h2>PHILOSOPHY</h2>
+        <div class="line"></div>
+        <div class="main-copy">
+            「忙しさを、価値ある時間に。<br>
+            組織の喜びを創り出す仕組みを。」
+        </div>
     </div>
-    <h2 style="color:var(--main-blue); text-align:center;">プロフィール</h2>
-    <table class="profile-table">
+
+    <div class="ph-box">
+        <div class="ph-item">
+            <span class="ph-label">PURPOSE</span><span class="ph-en">存在意義</span>
+            <p>医療・福祉の現場から「諦め」をなくし、働く人と支えられる人の笑顔を最大化する。</p>
+        </div>
+        <div class="ph-item">
+            <span class="ph-label">VISION</span><span class="ph-en">目指す姿</span>
+            <p>デジタルと対話が融合し、すべての職員が専門性を誇りを持って発揮できる業界標準をつくる。</p>
+        </div>
+        <div class="ph-item">
+            <span class="ph-label">VALUE</span><span class="ph-en">行動指針</span>
+            <p>・現場主義：常に現場の視点に立ち、実効性のある解決策を追求する。<br>
+               ・伴走者：単なる助言に留まらず、定着まで共に歩むパートナーである。<br>
+               ・誠実な対話：本音を尊重し、心理的安全性の高い組織づくりを体現する。</p>
+        </div>
+    </div>
+
+    <h2>MESSAGE</h2>
+    <p>医療・福祉の現場が抱える課題は、もはや精神論だけでは解決できません。現場経験から得た知見をもとに、ICTによる「ゆとり」の創出と、1on1による「心のつながり」の再構築を通じて、持続可能な福祉の未来を創造します。</p>
+
+    <h2>PROFILE</h2>
+    <p><strong>代表：伊藤 和典（Kazunori Ito）</strong></p>
+    <p>現場職から相談員、管理者まで幅広く従事。現場の疲弊による離職の連鎖を食い止めるべく、2024年にCiel Partnersを設立。ICT導入支援と対話型組織開発のスペシャリストとして、茨城県水戸市を拠点に全国で活動中。</p>
+
+    <h2>OUTLINE</h2>
+    <table>
         <tr><th>屋号</th><td>Ciel Partners（シエルパートナーズ）</td></tr>
         <tr><th>代表者</th><td>伊藤 和典</td></tr>
         <tr><th>所在地</th><td>茨城県水戸市</td></tr>
         <tr><th>事業内容</th><td>福祉業務改善・DXコンサルティング・医療業務改善・DXコンサルティング・人手不足・離職防止・1on1導入支援・実施代行</td></tr>
-        <tr><th>設立</th><td>2024年</td></tr>
+        <tr><th>保有資格</th><td>社会福祉士 / 介護支援専門員 / DXコンサルタント</td></tr>
     </table>
 </main>
-<footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
+<footer>&copy; 2026 Ciel Partners</footer>
 </body>
 </html>
