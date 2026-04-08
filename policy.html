@@ -2,43 +2,42 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー | Ciel Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 850px; margin: 0 auto; padding: 40px 20px; background: #fff; }
-        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #005CAF; padding-bottom: 15px; margin-bottom: 40px; }
-        nav a { text-decoration: none; color: #333; font-size: 0.9rem; margin-left: 15px; }
-        h1 { color: #005CAF; font-size: 1.6rem; }
-        h2 { font-size: 1.1rem; color: #005CAF; margin-top: 30px; border-bottom: 1px solid #eee; }
-        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9rem; }
+        :root { --main-blue: #005CAF; }
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 1.8; color: #333; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 50px; }
+        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.85rem; }
+        .container { max-width: 800px; margin: 60px auto; padding: 0 5%; }
+        h3 { color: var(--main-blue); border-left: 4px solid var(--main-blue); padding-left: 10px; margin-top: 40px; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; font-size: 0.8rem; margin-top: 80px; }
     </style>
 </head>
 <body>
 <header>
-    <img src="Ciel-pロゴ透明.png" height="50">
+    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
     <nav>
-        <a href="index.html">home</a>
-        <a href="about.html">about</a>
-        <a href="contact.html">contact</a>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">Ciel Partnersについて</a></li>
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="policy.html">ポリシー</a></li>
+        </ul>
     </nav>
 </header>
-<main>
-    <h1>プライバシーポリシー</h1>
-    <p>Ciel Partners（以下、「当事業所」といいます。）は、本ウェブサイト上で提供するサービスにおける、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
-    
-    <h2>第1条（個人情報の定義）</h2>
-    <p>「個人情報」とは、氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報を指します。</p>
-
-    <h2>第2条（個人情報の収集方法）</h2>
-    <p>当事業所は、お問い合わせフォーム送信時に、氏名、施設名・法人名、メールアドレス、電話番号などの個人情報をお尋ねすることがあります。</p>
-
-    <h2>第3条（個人情報の利用目的）</h2>
-    <p>1. 当事業所サービスの提供・運営のため<br>
-       2. お問い合わせに回答するため<br>
-       3. 重要なお知らせ等のご連絡のため</p>
-
-    <div class="footer">
-        <p>お問い合わせ窓口：info@ciel-p.com<br>代表：伊藤 和典</p>
-    </div>
+<main class="container">
+    <h2 style="text-align:center; color:var(--main-blue);">PRIVACY POLICY</h2>
+    <h3>1. 個人情報の収集</h3><p>当事務所は、適正な手段により個人情報を取得します。</p>
+    <h3>2. 利用目的</h3><p>お問い合わせへの回答、サービスの提供、関連する情報提供にのみ利用します。</p>
+    <h3>3. 適正管理</h3><p>漏洩、滅失を防ぐために、必要かつ適切な管理措置を講じます。</p>
 </main>
+<footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
 </body>
 </html>
