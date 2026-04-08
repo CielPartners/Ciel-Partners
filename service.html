@@ -2,22 +2,17 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サービス | Ciel Partners</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --main-blue: #005CAF; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 1.8; color: #333; background: #f9f9f9; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        body { font-family: sans-serif; margin: 0; line-height: 1.8; background: #f9f9f9; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; }
         .logo img { height: 50px; }
-        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.85rem; }
+        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
+        nav a { text-decoration: none; color: #333; font-size: 0.85rem; }
         .container { max-width: 1100px; margin: 60px auto; padding: 0 5%; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--main-blue); }
-        .card h3 { color: var(--main-blue); margin-top: 0; font-size: 1.25rem; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; font-size: 0.8rem; margin-top: 60px; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        .card { background: #fff; padding: 30px; border-radius: 10px; border-top: 5px solid var(--main-blue); margin-bottom: 20px; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; }
     </style>
 </head>
 <body>
@@ -36,13 +31,9 @@
     </nav>
 </header>
 <main class="container">
-    <h2 style="text-align:center; color:var(--main-blue); margin-bottom:40px;">SERVICE</h2>
-    <div class="grid">
-        <div class="card"><h3>福祉業務改善・DXコンサルティング</h3><p>ICTツールの選定・導入から運用定着まで、現場に即した支援を行います。</p></div>
-        <div class="card"><h3>医療業務改善・DXコンサルティング</h3><p>無駄を省き、より質の高い医療サービスに集中できる環境を整えます。</p></div>
-        <div class="card"><h3>人手不足・離職防止支援</h3><p>採用戦略から定着、組織風土のリデザインまでをトータルでサポートします。</p></div>
-        <div class="card"><h3>1on1導入支援・実施代行</h3><p>外部専門家が対話を通じて心理的安全性を高め、離職防止を実現します。</p></div>
-    </div>
+    <div class="card"><h3>福祉業務改善・DXコンサルティング</h3><p>現場に即したICTツールの導入と運用を支援します。</p></div>
+    <div class="card"><h3>医療業務改善・DXコンサルティング</h3><p>医療現場の効率化と質の向上を両立させます。</p></div>
+    <div class="card"><h3>1on1導入支援・実施代行</h3><p>対話を通じて組織の心理的安全性を高めます。</p></div>
 </main>
 <footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
 </body>
