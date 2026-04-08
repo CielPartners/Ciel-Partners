@@ -11,13 +11,10 @@
         .container { max-width: 600px; margin: 60px auto; padding: 40px; border: 1px solid #eee; border-radius: 15px; }
         label { display: block; margin-top: 20px; font-weight: bold; color: #005CAF; }
         input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        
-        /* チェックボックス用のスタイル */
         .checkbox-group { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
         .checkbox-item { display: flex; align-items: center; cursor: pointer; }
         .checkbox-item input[type="checkbox"] { width: auto; margin: 0 10px 0 0; cursor: pointer; }
         .checkbox-item span { color: #333; font-weight: normal; }
-
         button { background: #005CAF; color: #fff; padding: 15px; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 30px auto; width: 100%; font-weight: bold; }
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
     </style>
@@ -25,23 +22,25 @@
 <body>
 <header>
     <img src="Ciel-pロゴ透明.png" height="50">
-    <nav><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">ABOUT</a></li><li><a href="service.html">SERVICE</a></li><li><a href="news.html">TOPICS</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">CONTACT</a></li></ul></nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="service.html">SERVICE</a></li>
+            <li><a href="news.html">TOPICS</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="policy.html">POLICY</a></li>
+        </ul>
+    </nav>
 </header>
 <main class="container">
     <h2 style="text-align:center;color:#005CAF;">お問い合わせ</h2>
     <form>
-        <label>貴施設・法人名</label>
-        <input type="text">
-
-        <label>お名前（必須）</label>
-        <input type="text" required>
-
-        <label>メールアドレス（必須）</label>
-        <input type="email" required>
-
-        <label>電話番号</label>
-        <input type="tel">
-
+        <label>貴施設・法人名</label><input type="text">
+        <label>お名前（必須）</label><input type="text" required>
+        <label>メールアドレス（必須）</label><input type="email" required>
+        <label>電話番号</label><input type="tel">
         <label>相談種別（複数選択可）</label>
         <div class="checkbox-group">
             <label class="checkbox-item"><input type="checkbox" name="type" value="DX"> <span>DX・業務改善について</span></label>
@@ -49,15 +48,10 @@
             <label class="checkbox-item"><input type="checkbox" name="type" value="training"> <span>研修・セミナー依頼</span></label>
             <label class="checkbox-item"><input type="checkbox" name="type" value="other"> <span>その他</span></label>
         </div>
-
-        <label>内容（必須）</label>
-        <textarea rows="6" required></textarea>
-
+        <label>内容（必須）</label><textarea rows="6" required></textarea>
         <div style="text-align:center;margin-top:20px;">
-            <input type="checkbox" id="policy_agree" required style="width:auto;">
-            <label for="policy_agree" style="display:inline;color:#333;margin-left:5px;">プライバシーポリシーに同意する</label>
+            <input type="checkbox" id="policy_agree" required style="width:auto;"><label for="policy_agree" style="display:inline;color:#333;margin-left:5px;">プライバシーポリシーに同意する</label>
         </div>
-        
         <button type="submit">送信内容を確認する</button>
     </form>
 </main>
