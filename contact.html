@@ -14,11 +14,10 @@
         .checkbox-group { margin-top: 10px; display: flex; flex-direction: column; gap: 10px; }
         .checkbox-item { display: flex; align-items: center; cursor: pointer; }
         .checkbox-item input[type="checkbox"] { width: auto; margin: 0 10px 0 0; cursor: pointer; }
-        .checkbox-item span { color: #333; font-weight: normal; }
         button { background: #005CAF; color: #fff; padding: 15px; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 30px auto; width: 100%; font-weight: bold; }
         button:disabled { background: #ccc; cursor: not-allowed; }
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
-        #response-msg { text-align: center; margin-top: 20px; display: none; padding: 15px; border-radius: 5px; background: #f0f5ff; color: #005CAF; font-weight: bold; }
+        #msg { text-align: center; display: none; padding: 20px; color: #005CAF; font-weight: bold; background: #f0f5ff; border-radius: 10px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -38,84 +37,59 @@
 </header>
 <main class="container">
     <h2 style="text-align:center;color:#005CAF;">お問い合わせ</h2>
+    <div id="msg"></div>
     
-    <form id="contact-form">
-        <label>貴施設・法人名</label>
-        <input type="text" name="company">
-
-        <label>お名前（必須）</label>
-        <input type="text" name="name" required>
-
-        <label>メールアドレス（必須）</label>
-        <input type="email" name="email" required>
-
-        <label>電話番号</label>
-        <input type="tel" name="tel">
-
+    <form id="contactForm">
+        <label>貴施設・法人名</label><input type="text" name="company">
+        <label>お名前（必須）</label><input type="text" name="name" required>
+        <label>メールアドレス（必須）</label><input type="email" name="email" required>
+        <label>電話番号</label><input type="tel" name="tel">
         <label>相談種別（複数選択可）</label>
         <div class="checkbox-group">
-            <label class="checkbox-item"><input type="checkbox" name="type" value="DX・業務改善について"> <span>DX・業務改善について</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="type" value="1on1・離職防止について"> <span>1on1・離職防止について</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="type" value="研修・セミナー依頼"> <span>研修・セミナー依頼</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="type" value="その他"> <span>その他</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="type" value="DX"> <span>DX・業務改善について</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="type" value="1on1"> <span>1on1・離職防止について</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="type" value="研修"> <span>研修・セミナー依頼</span></label>
         </div>
-
-        <label>内容（必須）</label>
-        <textarea name="message" rows="6" required></textarea>
-
+        <label>内容（必須）</label><textarea name="message" rows="6" required></textarea>
         <div style="text-align:center;margin-top:20px;">
-            <input type="checkbox" id="policy_agree" required style="width:auto;">
-            <label for="policy_agree" style="display:inline;color:#333;margin-left:5px;font-weight:normal;">プライバシーポリシーに同意する</label>
+            <input type="checkbox" required id="p-check"><label for="p-check"> プライバシーポリシーに同意する</label>
         </div>
-        
-        <button type="submit" id="submit-btn">送信する</button>
+        <button type="submit" id="submitBtn">送信する</button>
     </form>
-    <div id="response-msg"></div>
 </main>
 <footer>&copy; 2026 Ciel Partners</footer>
 
 <script>
-    const form = document.getElementById('contact-form');
-    const btn = document.getElementById('submit-btn');
-    const msg = document.getElementById('response-msg');
-
-    // ご提示いただいたGASのURL
+    // GASのURL
     const GAS_URL = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
-
-    form.addEventListener('submit', function(e) {
+    
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const msgDiv = document.getElementById('msg');
         
+        // 送信中の状態を作る
         btn.disabled = true;
         btn.innerText = "送信中...";
 
-        // チェックボックスの選択内容を取得
-        const types = Array.from(form.querySelectorAll('input[name="type"]:checked')).map(el => el.value);
-        
-        const payload = {
-            company: form.company.value,
-            name: form.name.value,
-            email: form.email.value,
-            tel: form.tel.value,
-            type: types.join(', '),
-            message: form.message.value
-        };
+        const formData = new FormData(this);
+        const params = new URLSearchParams();
+        formData.forEach((value, key) => params.append(key, value));
 
         fetch(GAS_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        })
-        .then(() => {
-            msg.innerText = "お問い合わせありがとうございました。送信が完了しました。";
-            msg.style.display = "block";
-            form.reset();
-            btn.style.display = "none";
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("送信に失敗しました。ネットワーク環境を確認し、再度お試しください。");
+            method: 'POST',
+            mode: 'no-cors', // セキュリティ制限回避
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params
+        }).then(() => {
+            // 送信完了後の表示
+            msgDiv.innerText = "お問い合わせありがとうございました。送信が完了しました。";
+            msgDiv.style.display = "block";
+            this.style.display = "none"; // フォームを隠す
+            window.scrollTo(0,0);
+        }).catch((err) => {
+            console.error(err);
+            alert("送信に失敗しました。もう一度お試しください。");
             btn.disabled = false;
             btn.innerText = "送信する";
         });
