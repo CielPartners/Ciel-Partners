@@ -12,42 +12,44 @@
         
         .container { max-width: 900px; margin: 60px auto; padding: 0 5%; }
         
-        .section-title-box { text-align: center; margin-bottom: 40px; margin-top: 80px; }
+        /* タイトル装飾 */
+        .section-title-box { text-align: center; margin-bottom: 40px; margin-top: 60px; }
         .section-title-box h2 { color: #2c4361; font-size: 1.6rem; margin-bottom: 5px; border: none; letter-spacing: 2px; }
-        .section-title-box .line { width: 40px; height: 3px; background: #005CAF; margin: 0 auto 20px; }
+        .section-title-box .line { width: 40px; height: 3px; background: #005CAF; margin: 0 auto; }
         
         /* MISSION & VISION */
-        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 60px; }
-        .mv-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .mv-label { color: #005CAF; font-weight: bold; font-size: 0.8rem; margin-bottom: 15px; display: block; }
-        .mv-card h3 { font-size: 1.2rem; margin: 0; color: #333; line-height: 1.5; }
+        .mv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .mv-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; }
+        .mv-label { color: #005CAF; font-weight: bold; font-size: 0.8rem; margin-bottom: 15px; display: block; border-bottom: 1px solid #eee; padding-bottom: 5px; width: fit-content; }
+        .mv-card h3 { font-size: 1.25rem; margin: 0; color: #333; line-height: 1.6; }
 
         /* PHILOSOPHY */
-        .blue-border-box { border-left: 5px solid #005CAF; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 40px; text-align: center; font-size: 1.4rem; font-weight: bold; margin-bottom: 60px; border-radius: 4px; }
+        .blue-border-box { border-left: 6px solid #005CAF; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 40px; text-align: center; font-size: 1.4rem; font-weight: bold; margin-bottom: 60px; border-radius: 4px; color: #2c4361; }
         
         /* PURPOSE */
         .blue-bg-box { background: #e6edf7; padding: 50px 30px; border-radius: 20px; text-align: center; margin-bottom: 80px; }
-        .blue-bg-box h3 { font-size: 1.3rem; margin-bottom: 15px; color: #2c4361; }
-        .blue-bg-box p { font-size: 0.9rem; color: #555; margin: 0; }
+        .blue-bg-box h3 { font-size: 1.3rem; margin-bottom: 15px; color: #2c4361; line-height: 1.5; }
+        .blue-bg-box p { font-size: 0.95rem; color: #555; margin: 0; }
 
         /* WHY CHOOSE US */
         .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .why-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 4px solid #f0f5ff; }
+        .why-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-top: 4px solid #005CAF; }
         .why-num { color: #005CAF; font-weight: bold; margin-bottom: 10px; display: block; font-size: 0.9rem; }
-        .why-card h4 { margin: 0 0 15px; color: #333; font-size: 1.1rem; }
+        .why-card h4 { margin: 0 0 15px; color: #333; font-size: 1.1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
         .why-card p { font-size: 0.85rem; color: #666; margin: 0; text-align: justify; }
 
         /* PROFILE & OUTLINE */
         h2.sub { color: #005CAF; border-bottom: 2px solid #005CAF; padding-bottom: 10px; margin-top: 100px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         th, td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
         th { color: #005CAF; width: 30%; background: #fafafa; font-size: 0.9rem; }
-        td { font-size: 0.9rem; }
+        td { font-size: 0.9rem; color: #444; }
 
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; margin-top: 100px; }
     </style>
 </head>
 <body>
+
 <header>
     <img src="Ciel-pロゴ透明.png" height="50">
     <nav>
@@ -105,17 +107,17 @@
         <div class="why-card">
             <span class="why-num">01</span>
             <h4>医療・介護・福祉に精通した「実務目線」</h4>
-            <p>「理論だけのコンサル」ではありません。現場の負担を考慮した現実的なDX支援が可能です。</p>
+            <p>現場を深く知るからこそ、理論だけではない、現場の負担を考慮した現実的なDX支援が可能です。</p>
         </div>
         <div class="why-card">
             <span class="why-num">02</span>
             <h4>「健康経営」と「両立支援」の人材定着支援</h4>
-            <p>DXで効率化しながら、職員が長く働き続けられる環境づくりまでトータルで支援します。</p>
+            <p>DXによる効率化と並行し、職員が長く健康に働き続けられる職場環境づくりをトータルで支援します。</p>
         </div>
         <div class="why-card">
             <span class="why-num">03</span>
             <h4>「伴走型」の支援スタイル</h4>
-            <p>提案して終わりではなく、現場が動き出すまで一緒に考え、自分たちらしいDXを共に見つけます。</p>
+            <p>提案して終わりではありません。現場が実際に動き出し、定着するまで一緒に伴走し続けます。</p>
         </div>
     </div>
 
