@@ -1,44 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ | Ciel Partners</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --main-blue: #005CAF; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 1.8; color: #333; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-        .logo img { height: 50px; }
-        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; }
-        .container { max-width: 700px; margin: 60px auto; padding: 40px; background: #fff; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 25px; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--main-blue); }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-family: inherit; font-size: 1rem; }
-        .submit-btn { background: var(--main-blue); color: #fff; padding: 15px 50px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1.1rem; display: block; margin: 40px auto 0; transition: 0.3s; }
-        .submit-btn:hover { background: #004488; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; font-size: 0.8rem; margin-top: 100px; }
-    </style>
-</head>
+<head><meta charset="UTF-8"><title>CONTACT | Ciel Partners</title>
+<style>body{font-family:sans-serif;margin:0;line-height:1.8;}.container{max-width:600px;margin:60px auto;padding:40px;border:1px solid #eee;border-radius:15px;}label{display:block;margin-top:20px;font-weight:bold;color:#005CAF;}input,textarea,select{width:100%;padding:10px;margin-top:5px;border:1px solid #ddd;border-radius:5px;}button{background:#005CAF;color:#fff;padding:15px;border:none;border-radius:5px;cursor:pointer;display:block;margin:30px auto;width:100%;font-weight:bold;}footer{background:#1a1a1a;color:#fff;text-align:center;padding:40px;}</style></head>
 <body>
-<header>
-    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Ciel Partners"></div>
-    <nav><ul><li><a href="index.html">home</a></li><li><a href="about.html">Ciel Partnersについて</a></li><li><a href="service.html">サービス</a></li><li><a href="news.html">ニュース</a></li><li><a href="faq.html">よくある質問</a></li><li><a href="contact.html">お問い合わせ</a></li><li><a href="policy.html">ポリシー</a></li></ul></nav>
-</header>
+<header style="padding:15px 5%;border-bottom:1px solid #eee;"><img src="Ciel-pロゴ透明.png" height="50"></header>
 <main class="container">
-    <h2 style="text-align:center; color:var(--main-blue); margin-bottom:40px;">CONTACT</h2>
-    <p style="text-align:center; margin-bottom:40px;">ご相談・お見積りは無料です。以下のフォームよりお気軽にお問い合わせください。</p>
+    <h2 style="text-align:center;color:#005CAF;">お問い合わせ</h2>
     <form>
-        <div class="form-group"><label>施設名・事業所名</label><input type="text" placeholder="株式会社〇〇"></div>
-        <div class="form-group"><label>お名前（必須）</label><input type="text" required></div>
-        <div class="form-group"><label>メールアドレス（必須）</label><input type="email" required></div>
-        <div class="form-group">
-            <label>お問い合わせ内容（必須）</label>
-            <textarea rows="8" placeholder="現在のお悩みや、支援を検討されている内容をご記入ください。" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">送信内容を確認する</button>
+        <label>貴施設・法人名</label><input type="text">
+        <label>お名前（必須）</label><input type="text" required>
+        <label>メールアドレス（必須）</label><input type="email" required>
+        <label>電話番号</label><input type="tel">
+        <label>相談種別</label><select><option>DX・業務改善について</option><option>1on1・離職防止について</option><option>その他</option></select>
+        <label>内容（必須）</label><textarea rows="6" required></textarea>
+        <div style="text-align:center;margin-top:20px;"><input type="checkbox" id="a" required style="width:auto;"><label for="a" style="display:inline;color:#333;margin-left:5px;">プライバシーポリシーに同意する</label></div>
+        <button type="submit">送信内容を確認する</button>
     </form>
 </main>
-<footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
+<footer>&copy; 2026 Ciel Partners</footer>
 </body>
 </html>
