@@ -3,52 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciel Partnersについて | Ciel Partners</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ciel Partnersについて</title>
+    <style>
+        :root { --main-blue: #005CAF; --text-black: #333; --bg-light: #fdfdfd; }
+        body { font-family: "Noto Sans JP", sans-serif; line-height: 1.8; color: var(--text-black); margin: 0; background: var(--bg-light); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 50px; }
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.85rem; }
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 1.8rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 10px; margin-bottom: 40px; }
+        .target-box { background: #fff; padding: 25px; margin-bottom: 20px; border-left: 5px solid var(--main-blue); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .profile-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .profile-table th, .profile-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+        .profile-table th { width: 30%; color: var(--main-blue); }
+    </style>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="about.html" class="active">Ciel Partnersについて</a></li>
-                <li><a href="faq.html">よくあるご質問</a></li>
-                <li><a href="profile.html">代表プロフィール</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="page-header">
-            <h1>Ciel Partnersについて</h1>
-            <p class="subtitle">About Ciel Partners</p>
-        </section>
-
-        <section class="content-section">
-            <h2>私たちの想い</h2>
-            <p>
-                Ciel Partnersは、福祉現場のDX（デジタルトランスフォーメーション）推進を通じて、
-                従事者の皆様がより本来の業務に集中できる環境づくりをサポートします。
-            </p>
-            <p>
-                「現場主義」を大切にし、単なるシステムの導入ではなく、
-                そこで働く人々の心に寄り添ったソリューションを提供することを目指しています。
-            </p>
-        </section>
-
-        <section class="content-section">
-            <h2>ビジョン</h2>
-            <p>
-                テクノロジーの力で、福祉の未来をより明るく、より豊かに。
-                私たちは、地域社会に貢献するパートナーとして共に歩み続けます。
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
-    </footer>
-
+<header>
+    <div class="logo"><img src="Ciel-pロゴ透明.png" alt="Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">Ciel Partnersについて</a></li>
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="policy.html">ポリシー</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+    <h2 class="section-title">PHILOSOPHY</h2>
+    <div style="text-align:center; margin-bottom:60px;">
+        <h3 style="color:var(--main-blue);">福祉・医療現場で働く人々が、<br>晴れやかな心で働ける社会を創る。</h3>
+    </div>
+    <h2 class="section-title">SERVICE TARGET</h2>
+    <div class="target-box"><strong>医療機関（病院・クリニック）</strong><br>ICT活用で事務負担を減らし、医療の質を高めたい方</div>
+    <div class="target-box"><strong>介護・障害福祉事業所</strong><br>人手不足を解消し、現場に合ったDXを進めたい方</div>
+    <h2 class="section-title">PROFILE</h2>
+    <table class="profile-table">
+        <tr><th>屋号</th><td>Ciel Partners（シエル パートナーズ）</td></tr>
+        <tr><th>代表</th><td>伊藤 和典</td></tr>
+        <tr><th>所在地</th><td>茨城県水戸市</td></tr>
+        <tr><th>事業内容</th><td>福祉業務改善・DXコンサルティング・1on1導入支援</td></tr>
+    </table>
+</main>
 </body>
 </html>
