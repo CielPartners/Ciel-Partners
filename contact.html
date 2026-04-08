@@ -6,19 +6,31 @@
     <style>
         :root { --primary: #00529b; }
         body { font-family: sans-serif; margin: 0; background: #f8fbfe; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        .form-container { max-width: 650px; margin: 50px auto; background: #fff; padding: 40px; border-radius: 15px; border-top: 5px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; border-bottom: 1px solid #eee; }
+        nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
+        nav a { text-decoration: none; color: #333; font-size: 0.8rem; }
+        .form-container { max-width: 650px; margin: 50px auto; background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-weight: bold; color: var(--primary); margin-bottom: 8px; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #d1d9e0; border-radius: 6px; box-sizing: border-box; }
-        .btn-submit { background: linear-gradient(135deg, #00529b 0%, #00a0e9 100%); color: #fff; border: none; padding: 16px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 12px; border: 1px solid #d1d9e0; border-radius: 6px; box-sizing: border-box; }
+        .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: #f9f9f9; padding: 15px; border-radius: 6px; }
+        .btn-submit { background: linear-gradient(135deg, #00529b 0%, #00a0e9 100%); color: #fff; border: none; padding: 18px; border-radius: 50px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
 <header>
     <div class="logo"><img src="Ciel-pロゴ透明.png" height="50"></div>
-    <nav><ul><li><a href="index.html">home</a></li><li><a href="contact.html">お問い合わせ</a></li></ul></nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">について</a></li>
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="policy.html">ポリシー</a></li>
+        </ul>
+    </nav>
 </header>
 <div class="form-container">
     <h2 style="text-align:center; color:var(--primary);">Contact</h2>
@@ -26,9 +38,18 @@
         <div class="form-group"><label>法人名・施設名</label><input type="text" name="company" required></div>
         <div class="form-group"><label>お名前</label><input type="text" name="name" required></div>
         <div class="form-group"><label>メールアドレス</label><input type="email" name="email" required></div>
-        <div class="form-group"><label>お問い合わせ内容</label><textarea name="message" rows="5" required></textarea></div>
+        <div class="form-group">
+            <label>ご相談内容（複数選択可）</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="type" value="DXコンサル"> DX・業務改善</label>
+                <label><input type="checkbox" name="type" value="1on1導入"> 1on1導入支援</label>
+                <label><input type="checkbox" name="type" value="離職防止"> 離職防止・組織改革</label>
+                <label><input type="checkbox" name="type" value="研修"> 各種研修依頼</label>
+            </div>
+        </div>
+        <div class="form-group"><label>詳細メッセージ</label><textarea name="message" rows="5" required></textarea></div>
         <button type="submit" id="submit-btn" class="btn-submit">内容を確認して送信する</button>
-        <p id="result" style="display:none; text-align:center; margin-top:20px; color:var(--primary); font-weight:bold;">送信が完了しました。</p>
+        <p id="msg" style="display:none; text-align:center; margin-top:20px; color:green; font-weight:bold;">送信が完了しました。担当より折り返しご連絡いたします。</p>
     </form>
 </div>
 <script>
@@ -39,7 +60,7 @@
         btn.disabled = true; btn.innerText = "送信中...";
         fetch(scriptUrl, { method: "POST", body: new FormData(this), mode: "no-cors" })
         .then(() => {
-            document.getElementById('result').style.display = 'block';
+            document.getElementById('msg').style.display = 'block';
             this.reset();
             btn.style.display = 'none';
         });
