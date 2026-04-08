@@ -37,8 +37,12 @@
 </header>
 <main class="container">
     <h2 style="text-align:center;color:#005CAF;">お問い合わせ</h2>
-    <div id="msg"></div>
-    
+    <div class="compliance-note">
+        ※当事務所は伴走型のコンサルティングを専門としております。社会保険労務士法等の士業独占業務（書類作成・申請代行等）に該当するご依頼については、貴社顧問士業の方と連携して進めるか、専門家のご紹介での対応となります。あらかじめご了承ください。
+    </div>
+
+     <div id="msg"></div>
+
     <form id="contactForm">
         <label>貴施設・法人名</label><input type="text" name="company">
         <label>お名前（必須）</label><input type="text" name="name" required>
@@ -51,16 +55,20 @@
             <label class="checkbox-item"><input type="checkbox" name="type" value="研修"> <span>研修・セミナー依頼</span></label>
         </div>
         <label>内容（必須）</label><textarea name="message" rows="6" required></textarea>
-        <div style="text-align:center;margin-top:20px;">
-            <input type="checkbox" required id="p-check"><label for="p-check"> プライバシーポリシーに同意する</label>
+        <textarea name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+
+        <div class="agreement-area">
+            <input type="checkbox" required id="p-check" style="width: auto; margin-right: 5px; cursor: pointer;">
+            <label for="p-check"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
         </div>
+        
         <button type="submit" id="submitBtn">送信する</button>
     </form>
 </main>
+
 <footer>&copy; 2026 Ciel Partners</footer>
 
 <script>
-    // GASのURL
     const GAS_URL = "https://script.google.com/macros/s/AKfycbyQHojUPk5MmuHThZiuNGLb7IfLh8bIuEqvRt1ObR8hyNa5TLo0MvG_f52x80EZmRp_/exec";
     
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -68,7 +76,6 @@
         const btn = document.getElementById('submitBtn');
         const msgDiv = document.getElementById('msg');
         
-        // 送信中の状態を作る
         btn.disabled = true;
         btn.innerText = "送信中...";
 
@@ -78,14 +85,13 @@
 
         fetch(GAS_URL, {
             method: 'POST',
-            mode: 'no-cors', // セキュリティ制限回避
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: params
         }).then(() => {
-            // 送信完了後の表示
             msgDiv.innerText = "お問い合わせありがとうございました。送信が完了しました。";
             msgDiv.style.display = "block";
-            this.style.display = "none"; // フォームを隠す
+            this.style.display = "none";
             window.scrollTo(0,0);
         }).catch((err) => {
             console.error(err);
