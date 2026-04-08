@@ -5,42 +5,31 @@
     <title>TOPICS | Ciel Partners</title>
     <style>
         body { font-family: sans-serif; margin: 0; line-height: 1.8; color: #333; }
-        header { padding: 15px 5%; border-bottom: 1px solid #eee; background: #fff; }
-        
-        /* ニュース用ヒーローイメージ設定 */
-        .page-header-img { width: 100%; max-height: 300px; overflow: hidden; }
-        .page-header-img img { width: 100%; height: auto; object-fit: cover; }
-
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; font-size: 0.9rem; }
+        .page-header-img img { width: 100%; max-height: 300px; object-fit: cover; }
         .container { max-width: 800px; margin: 40px auto; padding: 0 5%; }
         h2 { color: #005CAF; border-bottom: 3px solid #005CAF; padding-bottom: 10px; margin-bottom: 30px; }
         .topic-item { border-bottom: 1px solid #eee; padding: 25px 0; }
         .date { color: #005CAF; font-weight: bold; display: block; margin-bottom: 5px; }
-        .title { font-size: 1.1rem; font-weight: bold; }
-        
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; margin-top: 60px; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
     </style>
 </head>
 <body>
 <header>
-    <img src="Ciel-pロゴ透明.png" height="50" alt="Ciel Partners">
+    <img src="Ciel-pロゴ透明.png" height="50">
+    <nav><ul><li><a href="index.html">HOME</a></li><li><a href="about.html">ABOUT</a></li><li><a href="service.html">SERVICE</a></li><li><a href="news.html">TOPICS</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">CONTACT</a></li></ul></nav>
 </header>
-
-<div class="page-header-img">
-    <img src="news.png" alt="TOPICS">
-</div>
-
+<div class="page-header-img"><img src="news.png" alt="TOPICS Main Image"></div>
 <main class="container">
     <h2>TOPICS</h2>
-    
     <div class="topic-item">
         <span class="date">2026.04.08</span>
-        <div class="title">ウェブサイト公開のお知らせ</div>
-        <p>Ciel Partnersの公式ウェブサイトを公開いたしました。福祉・医療現場の業務改善やDX推進に関する情報を随時発信してまいります。</p>
+        <strong>ウェブサイト公開のお知らせ</strong>
+        <p>Ciel Partnersの公式ウェブサイトを公開いたしました。サービス詳細や活動報告を順次更新してまいります。</p>
     </div>
 </main>
-
-<footer>
-    <p>&copy; 2026 Ciel Partners All Rights Reserved.</p>
-</footer>
+<footer>&copy; 2026 Ciel Partners</footer>
 </body>
 </html>
