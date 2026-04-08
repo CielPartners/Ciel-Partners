@@ -5,14 +5,16 @@
     <title>よくある質問 | Ciel Partners</title>
     <style>
         :root { --main-blue: #005CAF; }
-        body { font-family: sans-serif; margin: 0; line-height: 1.8; }
+        body { font-family: sans-serif; margin: 0; line-height: 1.8; background: #fdfdfd; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; }
         .logo img { height: 50px; }
         nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
         nav a { text-decoration: none; color: #333; font-size: 0.85rem; }
-        .container { max-width: 800px; margin: 60px auto; padding: 0 5%; }
-        .q { color: var(--main-blue); font-weight: bold; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; }
+        .container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
+        .faq-item { background: #fff; border-radius: 10px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); border-left: 6px solid var(--main-blue); }
+        .q { color: var(--main-blue); font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 15px; }
+        .a { color: #444; border-top: 1px solid #f0f0f0; padding-top: 15px; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -31,8 +33,19 @@
     </nav>
 </header>
 <main class="container">
-    <h2>よくある質問</h2>
-    <p class="q">Q. 遠方の施設でも可能ですか？</p><p>A. はい、オンラインで全国対応しております。</p>
+    <h2 style="text-align:center; color:var(--main-blue); margin-bottom:40px; font-size:2rem;">FAQ</h2>
+    <div class="faq-item">
+        <span class="q">Q. どのような施設がサポートの対象ですか？</span>
+        <p class="a">医療機関（病院・クリニック）、介護事業所（高齢者福祉施設）、障害福祉サービス事業所など、福祉・医療業界全般に対応しております。</p>
+    </div>
+    <div class="faq-item">
+        <span class="q">Q. コンサルティングの期間はどのくらいですか？</span>
+        <p class="a">課題やプロジェクトの内容によりますが、短期のスポット支援から半年〜1年単位の継続支援まで、ご要望に合わせて柔軟に対応いたします。</p>
+    </div>
+    <div class="faq-item">
+        <span class="q">Q. 遠方の事業所でも依頼可能ですか？</span>
+        <p class="a">はい、オンライン（Zoom等）を活用することで全国どこでも対応可能です。現地への訪問をご希望の場合は、別途ご相談ください。</p>
+    </div>
 </main>
 <footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
 </body>
