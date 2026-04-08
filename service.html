@@ -2,17 +2,22 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>サービス | Ciel Partners</title>
+    <title>サービス内容 | Ciel Partners</title>
     <style>
         :root { --main-blue: #005CAF; }
-        body { font-family: sans-serif; margin: 0; line-height: 1.8; background: #f9f9f9; }
+        body { font-family: sans-serif; margin: 0; background: #f9f9f9; line-height: 1.8; color: #333; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; }
         .logo img { height: 50px; }
         nav ul { list-style: none; display: flex; gap: 15px; margin: 0; }
         nav a { text-decoration: none; color: #333; font-size: 0.85rem; }
         .container { max-width: 1100px; margin: 60px auto; padding: 0 5%; }
-        .card { background: #fff; padding: 30px; border-radius: 10px; border-top: 5px solid var(--main-blue); margin-bottom: 20px; }
-        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; }
+        .section-title { text-align: center; color: var(--main-blue); margin-bottom: 50px; font-size: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .card { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 6px solid var(--main-blue); }
+        .card h3 { color: var(--main-blue); margin-top: 0; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .card p { font-size: 0.95rem; color: #555; }
+        footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; margin-top: 80px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -31,9 +36,25 @@
     </nav>
 </header>
 <main class="container">
-    <div class="card"><h3>福祉業務改善・DXコンサルティング</h3><p>現場に即したICTツールの導入と運用を支援します。</p></div>
-    <div class="card"><h3>医療業務改善・DXコンサルティング</h3><p>医療現場の効率化と質の向上を両立させます。</p></div>
-    <div class="card"><h3>1on1導入支援・実施代行</h3><p>対話を通じて組織の心理的安全性を高めます。</p></div>
+    <h2 class="section-title">SERVICE</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>福祉業務改善・DXコンサルティング</h3>
+            <p>介護記録の電子化や、現場の動線に合わせたICTツールの選定、導入・定着支援まで、職員が本来の業務に集中できる環境を構築します。</p>
+        </div>
+        <div class="card">
+            <h3>医療業務改善・DXコンサルティング</h3>
+            <p>医療従事者の負担を軽減するため、業務フローの見直しやデジタル技術の活用を支援。効率的で質の高い医療提供体制の実現を目指します。</p>
+        </div>
+        <div class="card">
+            <h3>人手不足・離職防止支援</h3>
+            <p>採用力の強化だけでなく、既存職員のエンゲージメント向上に焦点を当てた組織改革を提案。持続可能なチーム作りをサポートします。</p>
+        </div>
+        <div class="card">
+            <h3>1on1導入支援・実施代行</h3>
+            <p>外部の専門家が対話を代行・支援することで、本音を引き出し心理的安全性を確保。離職の予兆を早期に発見し、適切な対策を講じます。</p>
+        </div>
+    </div>
 </main>
 <footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
 </body>
