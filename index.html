@@ -6,15 +6,19 @@
     <title>Ciel Partners | 福祉業務改善・DXコンサルティング・医療業務改善・DXコンサルティング・人手不足・離職防止・1on1導入支援・実施代行</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-blue: #005CAF; }
-        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 1.8; color: #333; }
+        :root { --main-blue: #005CAF; --text-color: #333; }
+        body { font-family: 'Noto Sans JP', sans-serif; margin: 0; line-height: 1.8; color: var(--text-color); }
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 50px; }
         nav ul { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.85rem; }
+        nav a { text-decoration: none; color: var(--text-color); font-weight: 500; font-size: 0.85rem; transition: 0.3s; }
+        nav a:hover { color: var(--main-blue); }
         .hero img { width: 100%; height: auto; display: block; }
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 5%; text-align: center; }
         .main-title { color: var(--main-blue); font-size: 1.6rem; font-weight: bold; line-height: 1.7; margin-bottom: 30px; letter-spacing: 0.05em; }
+        .lead-text { font-size: 1.1rem; margin-bottom: 40px; color: #555; }
+        .btn { display: inline-block; padding: 18px 50px; background: var(--main-blue); color: #fff !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { opacity: 0.8; }
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 30px; font-size: 0.8rem; }
     </style>
 </head>
@@ -40,7 +44,8 @@
             福祉業務改善・DXコンサルティング・医療業務改善・DXコンサルティング・<br>
             人手不足・離職防止・1on1導入支援・実施代行
         </h2>
-        <p>現場の課題に深く寄り添い、持続可能な組織づくりをサポートします。</p>
+        <p class="lead-text">現場の課題に深く寄り添い、持続可能な組織づくりをサポートします。</p>
+        <a href="service.html" class="btn">サービス詳細を見る</a>
     </div>
 </main>
 <footer>&copy; 2026 Ciel Partners All Rights Reserved.</footer>
