@@ -18,12 +18,6 @@
         button:disabled { background: #ccc; cursor: not-allowed; }
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
         #msg { text-align: center; display: none; padding: 20px; color: #005CAF; font-weight: bold; background: #f0f5ff; border-radius: 10px; margin-bottom: 20px; }
-        
-        /* 追加デザイン */
-        .booking-section { margin-top: 60px; padding-top: 60px; border-top: 2px dashed #eee; }
-        .booking-title { text-align: center; color: #005CAF; margin-bottom: 10px; font-size: 1.5rem; }
-        .booking-desc { text-align: center; font-size: 0.95rem; color: #333; margin-bottom: 20px; line-height: 1.6; }
-        .compliance-note { font-size: 0.85rem; background: #f9f9f9; padding: 15px; border-radius: 5px; color: #555; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -60,25 +54,16 @@
             <label class="checkbox-item"><input type="checkbox" name="type" value="1on1"> <span>1on1・離職防止について</span></label>
             <label class="checkbox-item"><input type="checkbox" name="type" value="研修"> <span>研修・セミナー依頼</span></label>
         </div>
-        <label>内容（必須）</label>
+        <label>内容（必須）</label><textarea name="message" rows="6" required></textarea>
         <textarea name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
 
-        <div class="agreement-area" style="margin-top:20px; display: flex; align-items: center;">
-            <input type="checkbox" required id="p-check" style="width: auto; margin-right: 10px; cursor: pointer;">
-            <label for="p-check" style="margin-top: 0; font-weight: normal;"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
+        <div class="agreement-area">
+            <input type="checkbox" required id="p-check" style="width: auto; margin-right: 5px; cursor: pointer;">
+            <label for="p-check"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
         </div>
         
         <button type="submit" id="submitBtn">送信する</button>
     </form>
-
-    <div class="booking-section">
-        <h2 class="booking-title">直接スケジュールを確認して予約したい方は、こちらをご利用ください。</h2>
-        <p class="booking-desc">
-            <strong>▼お打ち合わせ可能日程</strong><br>
-       </p>
-        
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2OgND3kaT_XtlaoXkq0BAgDRTdoi1MbkVhC6FtzTM6o0Jbkq2F6Ksz-_K-PB3o_KZv59aI50H2?gv=true" style="border: 0" width="100%" height="650" frameborder="0"></iframe>
-    </div>
 </main>
 
 <footer>&copy; 2026 Ciel Partners</footer>
