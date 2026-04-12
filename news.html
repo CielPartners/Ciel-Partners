@@ -13,6 +13,24 @@
         h2 { color: #005CAF; border-bottom: 3px solid #005CAF; padding-bottom: 10px; margin-bottom: 30px; }
         .topic-item { border-bottom: 1px solid #eee; padding: 25px 0; }
         .date { color: #005CAF; font-weight: bold; display: block; margin-bottom: 5px; }
+        
+        /* 画像リンク用の追加スタイル */
+        .news-image-link {
+            display: block;
+            margin: 20px 0;
+            transition: opacity 0.3s;
+        }
+        .news-image-link:hover {
+            opacity: 0.8;
+        }
+        .news-image-link img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
         footer { background: #1a1a1a; color: #fff; text-align: center; padding: 40px; }
     </style>
 </head>
@@ -34,6 +52,16 @@
 <div class="page-header-img"><img src="news.png" alt="TOPICS Main Image"></div>
 <main class="container">
     <h2>TOPICS</h2>
+
+    <div class="topic-item">
+        <span class="date">2026.04.12</span> <strong>福祉DX通信を公開しました</strong>
+        <p>最新の福祉DX通信を発行いたしました。以下の画像をクリックするとPDF詳細をご覧いただけます。</p>
+        
+        <a href="https://drive.google.com/file/d/1xho7P_HWQZuXuxwHRApQTPqfFo7FiNQJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="news-image-link">
+            <img src="福祉DX通信.png" alt="福祉DX通信">
+        </a>
+    </div>
+
     <div class="topic-item">
         <span class="date">2026.04.08</span>
         <strong>ウェブサイト公開のお知らせ</strong>
