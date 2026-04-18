@@ -44,9 +44,10 @@
      <div id="msg"></div>
 
     <form id="contactForm">
-        <label>貴施設・法人名(必須)</label><input type="text" name="company">
+        <label>貴施設・法人名(必須)</label><input type="text" name="company" required>
         <label>お名前（必須）</label><input type="text" name="name" required>
         <label>メールアドレス（必須）</label><input type="email" name="email" required>
+        <label>役職(必須)</label><input type="email" name="email" required>
         <label>電話番号</label><input type="tel" name="tel">
         <label>相談種別（複数選択可）</label>
         <div class="checkbox-group">
@@ -55,8 +56,7 @@
             <label class="checkbox-item"><input type="checkbox" name="type" value="研修"> <span>研修・セミナー依頼</span></label>
         </div>
         <label>内容（必須）</label><textarea name="message" rows="6" required></textarea>
-        <textarea name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
-
+        
         <div class="agreement-area">
             <input type="checkbox" required id="p-check" style="width: auto; margin-right: 5px; cursor: pointer;">
             <label for="p-check"><a href="policy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
